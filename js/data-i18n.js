@@ -53,14 +53,21 @@
   // -------- Devices (6) --------
   const devicesEn = {
     'DEV-3006': { name: 'Lynxi EXO · Leader-Follower Exoskeleton', category: 'EXO exoskeleton',  status: 'In stock',
-      features: ['🦾 Single-arm · 7 DOF · force feedback ±5N','🤲 Dual-arm · 5GHz sync','🧍 Half-body humanoid · 14+3 DOF','🧤 Tactile gloves · 16-channel fingertip force (optional)','Teleop latency < 5ms · works with all mainstream arms'],
-      desc: 'One product line covering single-arm / dual-arm / half-body humanoid + optional tactile gloves. Wearable "exo arm" with 1:1 motion mapping. Co-developed with multiple leading humanoid robot OEMs.' },
+      features: ['🦾 Single / dual-arm / half-body humanoid','🧤 Tactile gloves · ±5N force (optional)','Teleop latency < 5ms'],
+      desc: 'Wearable exoskeleton with 1:1 motion mapping — co-developed with leading humanoid OEMs.' },
     'DEV-3013': { name: 'Lynxi VR-Pro · Handle Teleop Kit',  category: 'VR controllers',          status: 'In stock',
-      features: ['Meta Quest 3 / PICO 4 compatible','6-DOF dual-handle tracking','Handle → arm pose mapping','30Hz sync capture'],
-      desc: 'Low-cost teleop using consumer VR. Quest 3 + Dolphin adapter — start high-quality capture out of the box.' },
+      features: ['Quest 3 / PICO 4 compatible','6-DOF dual-handle tracking','30 Hz sync capture'],
+      desc: 'Consumer VR + Dolphin adapter — high-quality capture under $1.5k.' },
     'DEV-3014': { name: 'Lynxi Vision-XR · Vision Pro Kit', category: 'XR immersive teleop',     status: 'Pre-order',
-      features: ['Apple Vision Pro fully supported','Eye + hand tracking dual input','Immersive stereoscopic teleop','Dual-arm sync supported'],
-      desc: 'High-fidelity teleop via Vision Pro eye + gesture tracking. No extra controllers. Pro-grade capture, 3× precision over conventional handles.' },
+      features: ['Vision Pro fully supported','Eye + hand tracking','Dual-arm sync supported'],
+      desc: 'Vision Pro eye + gesture teleop — 3× precision over conventional handles.' },
+    'DEV-3015': { name: 'Lynxi · Lightweight Robot Arm', category: 'Entry-level desktop arm', status: 'In stock',
+      features: [
+        '🦾 6-DOF desktop arm · only 0.8 kg',
+        '🕹️ Joy-Con-style handle teleop',
+        '✅ 1000+ units shipped'
+      ],
+      desc: 'Student / maker entry point — start capture in 30 minutes.' },
   };
 
   // -------- Courses (5) --------

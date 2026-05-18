@@ -34,10 +34,10 @@
   <p data-i18n="dev.head.desc">From all-in-one platform to skill store — embodied-AI development as easy as writing an app.</p>
   <div style="margin-top:32px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
     <a href="#platform" class="btn btn-ghost btn-sm" data-i18n="dev.head.b1">Platform</a>
-    <a href="#skills" class="btn btn-ghost btn-sm" data-i18n="dev.head.b2">Skill store</a>
-    <a href="#mini-arm" class="btn btn-ghost btn-sm" data-i18n="dev.head.b3">Entry arm</a>
+    <a href="#skills" class="btn btn-ghost btn-sm" data-i18n="dev.head.b2" style="display:none;">Skill store</a>
+    <a href="#mini-arm" class="btn btn-ghost btn-sm" data-i18n="dev.head.b3" style="display:none;">Entry arm</a>
     <a href="#oss" class="btn btn-ghost btn-sm" data-i18n="dev.head.b4">Open datasets</a>
-    <a href="#academy" class="btn btn-ghost btn-sm" data-i18n="dev.head.b5">Academy</a>
+    <a href="#academy" class="btn btn-ghost btn-sm" data-i18n="dev.head.b5" style="display:none;">Academy</a>
   </div>
 </header>
 
@@ -61,21 +61,21 @@
       <div style="display:grid;grid-template-columns:repeat(5, 1fr) 0fr;gap:0;align-items:center;">
         <div style="text-align:center;">
           <div style="width:80px;height:80px;margin:0 auto 12px;border-radius:50%;background:var(--gradient-cta);display:flex;align-items:center;justify-content:center;font-size:36px;">📂</div>
-          <div style="font-size:11px;color:var(--wave-cyan);letter-spacing:2px;">STEP 1</div>
+          <div style="font-size:11px;color:var(--wave-cyan);letter-spacing:2px;" data-i18n="dev.s1.step1.eyebrow">STEP 1</div>
           <div style="font-size:16px;font-weight:700;margin:6px 0;" data-i18n="dev.s1.step1.label">Download dataset</div>
           <div style="font-size:12px;color:var(--text-dim);" data-i18n="dev.s1.step1.desc">In-house / open-source / purchased</div>
         </div>
         <div style="text-align:center;color:var(--wave-cyan);font-size:24px;">→</div>
         <div style="text-align:center;">
           <div style="width:80px;height:80px;margin:0 auto 12px;border-radius:50%;background:var(--gradient-cta);display:flex;align-items:center;justify-content:center;font-size:36px;">☁️</div>
-          <div style="font-size:11px;color:var(--wave-cyan);letter-spacing:2px;">STEP 2</div>
+          <div style="font-size:11px;color:var(--wave-cyan);letter-spacing:2px;" data-i18n="dev.s1.step2.eyebrow">STEP 2</div>
           <div style="font-size:16px;font-weight:700;margin:6px 0;" data-i18n="dev.s1.step2.label">Elastic GPU training</div>
           <div style="font-size:12px;color:var(--text-dim);" data-i18n="dev.s1.step2.desc">On-demand · pricing TBD</div>
         </div>
         <div style="text-align:center;color:var(--wave-cyan);font-size:24px;">→</div>
         <div style="text-align:center;">
           <div style="width:80px;height:80px;margin:0 auto 12px;border-radius:50%;background:var(--gradient-cta);display:flex;align-items:center;justify-content:center;font-size:36px;">📡</div>
-          <div style="font-size:11px;color:var(--wave-cyan);letter-spacing:2px;">STEP 3</div>
+          <div style="font-size:11px;color:var(--wave-cyan);letter-spacing:2px;" data-i18n="dev.s1.step3.eyebrow">STEP 3</div>
           <div style="font-size:16px;font-weight:700;margin:6px 0;" data-i18n="dev.s1.step3.label">One-click deploy</div>
           <div style="font-size:12px;color:var(--text-dim);" data-i18n="dev.s1.step3.desc">→ your robot arm</div>
         </div>
@@ -116,7 +116,7 @@
 </section>
 
 <!-- ============ ② Skill store ============ -->
-<section class="section section-bg-deep" id="skills">
+<section class="section section-bg-deep" id="skills" style="display:none;">
   <div class="section-inner">
     <div class="section-head-left">
       <div>
@@ -139,7 +139,7 @@
 </section>
 
 <!-- ============ ③ Entry-level arms ============ -->
-<section class="section section-bg-mid" id="mini-arm">
+<section class="section section-bg-mid" id="mini-arm" style="display:none;">
   <div class="section-inner">
     <div class="section-head">
       <div class="section-eyebrow" data-i18n="dev.s3.eyebrow">SECTION 03</div>
@@ -200,7 +200,7 @@
     <div class="grid grid-3" id="oss-grid"></div>
 
     <div style="margin-top:48px;padding:36px;background:var(--ocean-card);border:1px solid var(--ocean-line);border-radius:var(--radius-lg);">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.8fr;gap:32px;text-align:center;align-items:center;">
         <div>
           <div style="font-family:var(--font-mono);font-size:36px;font-weight:700;background:var(--gradient-cta);-webkit-background-clip:text;background-clip:text;color:transparent;">12</div>
           <div style="color:var(--text-dim);font-size:13px;margin-top:4px;letter-spacing:1px;" data-i18n="dev.s4.k1.label">Curated datasets</div>
@@ -214,7 +214,7 @@
           <div style="color:var(--text-dim);font-size:13px;margin-top:4px;letter-spacing:1px;" data-i18n="dev.s4.k3.label">Robot embodiments</div>
         </div>
         <div>
-          <div style="font-family:var(--font-mono);font-size:36px;font-weight:700;background:var(--gradient-cta);-webkit-background-clip:text;background-clip:text;color:transparent;">Apache + MIT + CC</div>
+          <div style="font-family:var(--font-mono);font-size:36px;font-weight:700;white-space:nowrap;background:var(--gradient-cta);-webkit-background-clip:text;background-clip:text;color:transparent;">Apache + MIT + CC</div>
           <div style="color:var(--text-dim);font-size:13px;margin-top:4px;letter-spacing:1px;" data-i18n="dev.s4.k4.label">Open-source licenses</div>
         </div>
       </div>
@@ -226,7 +226,7 @@
 </section>
 
 <!-- ============ ⑤ Academy ============ -->
-<section class="section section-bg-mid" id="academy">
+<section class="section section-bg-mid" id="academy" style="display:none;">
   <div class="section-inner">
     <div class="section-head-left">
       <div>
@@ -250,6 +250,37 @@
 
 <footer class="footer">
   <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Dolphin Lynxi" />
+          <span data-i18n="nav.brand">Dolphin Lynxi</span>
+        </div>
+        <div class="footer-tag">
+          <span data-i18n="footer.company">Shanghai Dolphin Lynxi Technology Co., Ltd.</span><br/>
+          <span data-i18n="footer.address">📍 1F, No. 258 Pingyang Rd., Minhang, Shanghai</span><br/>
+          <span data-i18n="footer.email">📮 plumpost@sina.com</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col.products">Products</h4>
+        <a href="marketplace.html" data-i18n="footer.link.market">Lynxi Dataset Market</a>
+        <a href="dashboard.html" data-i18n="footer.link.demo">Toolchain Live Demo</a>
+        <a href="products.html#devices" data-i18n="footer.link.devices">Lynxi Capture Devices</a>
+        <a href="products.html" data-i18n="footer.link.overview">Product overview</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col.dev">Developers</h4>
+        <a href="developer.html#platform" data-i18n="footer.link.platform">All-in-one platform</a>
+        <a href="developer.html#oss" data-i18n="footer.link.oss">Open-source datasets</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col.about">About</h4>
+        <a href="about.html#about" data-i18n="footer.link.aboutUs">About us</a>
+        <a href="about.html#join" data-i18n="footer.link.join">Careers</a>
+        <a href="about.html#contact" data-i18n="footer.link.contact">Contact us</a>
+      </div>
+    </div>
     <div class="footer-bot">
       <div data-i18n="footer.bot.short">© 2026 Shanghai Dolphin Lynxi Technology Co., Ltd.</div>
       <div class="footer-slogan" data-i18n="footer.slogan">Data flows like tide, intelligence emerges</div>

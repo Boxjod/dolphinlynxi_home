@@ -54,7 +54,7 @@
         <div style="height:160px;background:url(assets/scenes/logistics.jpg) center/cover;position:relative;">
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.75) 100%);"></div>
           <div style="position:absolute;bottom:14px;left:18px;color:white;z-index:2;">
-            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;">SCENE 01</div>
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;" data-i18n="products.p1.s1.eyebrow">SCENE 01</div>
             <div style="font-size:22px;font-weight:700;line-height:1.2;" data-i18n="home.ds.s1.label">📦 Logistics</div>
           </div>
         </div>
@@ -71,7 +71,7 @@
         <div style="height:160px;background:url(assets/scenes/industry.jpg) center/cover;position:relative;">
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.75) 100%);"></div>
           <div style="position:absolute;bottom:14px;left:18px;color:white;z-index:2;">
-            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;">SCENE 02</div>
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;" data-i18n="products.p1.s2.eyebrow">SCENE 02</div>
             <div style="font-size:22px;font-weight:700;line-height:1.2;" data-i18n="home.ds.s2.label">🏭 Industrial</div>
           </div>
         </div>
@@ -88,7 +88,7 @@
         <div style="height:160px;background:url(assets/scenes/home.jpg) center/cover;position:relative;">
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.75) 100%);"></div>
           <div style="position:absolute;bottom:14px;left:18px;color:white;z-index:2;">
-            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;">SCENE 03</div>
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;" data-i18n="products.p1.s3.eyebrow">SCENE 03</div>
             <div style="font-size:22px;font-weight:700;line-height:1.2;" data-i18n="home.ds.s3.label">🏠 Home service</div>
           </div>
         </div>
@@ -105,7 +105,7 @@
         <div style="height:160px;background:url(assets/scenes/medical.jpg) center/cover;position:relative;">
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.75) 100%);"></div>
           <div style="position:absolute;bottom:14px;left:18px;color:white;z-index:2;">
-            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;">SCENE 04</div>
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;" data-i18n="products.p1.s4.eyebrow">SCENE 04</div>
             <div style="font-size:22px;font-weight:700;line-height:1.2;" data-i18n="home.ds.s4.label">🏥 Medical</div>
           </div>
         </div>
@@ -119,14 +119,14 @@
       </div>
     </div>
 
-    <div class="section-head-left">
+    <div class="section-head-left" style="display:none;">
       <div>
         <h3 style="font-size:24px;font-weight:700;" data-i18n="products.p1.feat.title">Featured datasets</h3>
         <p style="color:var(--text-secondary);margin-top:8px;" data-i18n="products.p1.feat.desc">In-house / Enterprise / Crowdsourced — three sourcing modes, catalog continuously expanding.</p>
       </div>
       <a href="marketplace.html" class="btn btn-primary" data-i18n="products.p1.feat.btn">Browse all datasets →</a>
     </div>
-    <div class="grid grid-4" id="dataset-grid"></div>
+    <div class="grid grid-4" id="dataset-grid" style="display:none;"></div>
   </div>
 </section>
 
@@ -157,18 +157,19 @@
       </div>
     </div>
 
-    <h3 style="font-size:22px;font-weight:700;margin-bottom:24px;" data-i18n="products.p2.appl.title">💎 Lynxi Appliance · On-prem form-factor</h3>
+    <h3 style="font-size:22px;font-weight:700;margin-bottom:24px;" data-i18n="products.p2.deploy.title">📦 Lynxi deployment options · Appliance & Cloud</h3>
 
-    <div class="card" style="padding:0;margin-bottom:28px;overflow:hidden;">
-      <div style="display:grid;grid-template-columns:280px 1fr;gap:0;align-items:stretch;">
-        <div style="background:#ffffff;border-right:1px solid var(--ocean-line);display:flex;align-items:center;justify-content:center;padding:24px;min-height:260px;">
-          <img src="assets/server.png" alt="Lynxi appliance" style="max-height:240px;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(15,37,64,0.12));" />
+    <div class="grid grid-2" style="margin-bottom:64px;align-items:stretch;">
+      <!-- 一体机 -->
+      <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:#ffffff;border-bottom:1px solid var(--ocean-line);display:flex;align-items:center;justify-content:center;padding:24px;height:200px;">
+          <img src="assets/server.png" alt="Lynxi appliance" style="max-height:170px;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(15,37,64,0.12));" />
         </div>
-        <div style="padding:28px 32px;">
+        <div style="padding:24px 28px 28px;display:flex;flex-direction:column;flex:1;">
           <div style="font-size:11px;color:var(--wave-cyan);letter-spacing:2px;margin-bottom:6px;font-weight:700;" data-i18n="products.p2.banner.eyebrow">PRIVATE DEPLOYMENT · On-prem delivery</div>
-          <h3 style="font-size:22px;font-weight:700;margin-bottom:10px;" data-i18n="products.p2.banner.title">Data on-site · compute bundled</h3>
-          <p style="color:var(--text-secondary);font-size:14px;line-height:1.7;margin-bottom:14px;" data-i18n="products.p2.banner.desc">Designed for high-compliance, high-privacy scenarios. Pre-installed with the Lynxi toolchain + full LeRobot stack — out-of-the-box. End-to-end pipeline runs on your intranet; 0% of data / models / traffic leaves.</p>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <h4 style="font-size:20px;font-weight:700;margin-bottom:10px;" data-i18n="products.p2.appl.title">💎 Lynxi Appliance · On-prem form-factor</h4>
+          <p style="color:var(--text-secondary);font-size:14px;line-height:1.7;margin-bottom:16px;" data-i18n="products.p2.banner.desc">Designed for high-compliance, high-privacy scenarios. Pre-installed with the Lynxi toolchain + full LeRobot stack — out-of-the-box. End-to-end pipeline runs on your intranet; 0% of data / models / traffic leaves.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;">
             <span class="tag" data-i18n="products.p2.banner.tag1">0% data egress</span>
             <span class="tag" data-i18n="products.p2.banner.tag2">Rack & tower form-factors</span>
             <span class="tag" data-i18n="products.p2.banner.tag3">On-site + remote support</span>
@@ -176,32 +177,30 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <h3 style="font-size:22px;font-weight:700;margin-bottom:24px;" data-i18n="products.p2.cloud.title">☁️ Lynxi Cloud · Elastic compute subscription</h3>
-    <div class="card" style="padding:0;margin-bottom:64px;overflow:hidden;">
-      <div style="display:grid;grid-template-columns:280px 1fr;gap:0;align-items:stretch;">
-        <div style="background:url(assets/devices/gpu-cloud.jpg) center/cover;min-height:200px;position:relative;">
+      <!-- 灵汐云 -->
+      <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:url(assets/devices/gpu-cloud.jpg) center/cover;height:200px;position:relative;">
           <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(44,127,191,0.55) 0%,rgba(8,145,178,0.85) 100%);"></div>
           <div style="position:absolute;bottom:18px;left:20px;color:white;z-index:2;">
             <div style="font-size:11px;letter-spacing:2px;opacity:0.85;font-weight:600;" data-i18n="products.p2.cloud.eyebrow">CLOUD SUBSCRIPTION</div>
-            <div style="font-size:28px;font-weight:800;line-height:1.2;margin-top:6px;" data-i18n="products.p2.cloud.priceMain">Coming soon</div>
+            <div style="font-size:26px;font-weight:800;line-height:1.2;margin-top:6px;" data-i18n="products.p2.cloud.priceMain">Coming soon</div>
           </div>
         </div>
-        <div style="padding:28px 32px;">
+        <div style="padding:24px 28px 28px;display:flex;flex-direction:column;flex:1;">
           <div style="font-size:11px;color:var(--wave-pink);letter-spacing:2px;margin-bottom:6px;font-weight:700;" data-i18n="products.p2.cloud.lead">Don't want an appliance? Stay tuned for our cloud compute →</div>
-          <h3 style="font-size:22px;font-weight:700;margin-bottom:10px;" data-i18n="products.p2.cloud.name">Lynxi Cloud · Shared GPU training compute</h3>
+          <h4 style="font-size:20px;font-weight:700;margin-bottom:10px;" data-i18n="products.p2.cloud.title">☁️ Lynxi Cloud · Elastic compute subscription</h4>
           <p style="color:var(--text-secondary);font-size:14px;line-height:1.7;margin-bottom:14px;" data-i18n="products.p2.cloud.desc">On-demand GPU compute with the full LeRobot stack pre-installed — sign up for early access and we'll notify you on launch. Built for SMBs without IT teams, individual developers and educators.</p>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
             <span class="tag" data-i18n="products.p2.cloud.tag1">4090 / A100 / H100 elastic scheduling</span>
             <span class="tag" data-i18n="products.p2.cloud.tag2">Full LeRobot stack pre-installed</span>
             <span class="tag" data-i18n="products.p2.cloud.tag3">One-click ACT / π0 / GR00T</span>
             <span class="tag pink" data-i18n="products.p2.cloud.tag4">Powered by Volcano Ark</span>
           </div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-            <a href="developer.html#platform" class="btn btn-primary" data-i18n="products.p2.cloud.b1">Join the early-access list →</a>
-            <a href="https://www.volcengine.com/docs/82379/1541523" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="products.p2.cloud.b2">📖 View API docs</a>
-            <a href="about.html#contact" class="btn btn-ghost" data-i18n="products.p2.cloud.b3">Enterprise inquiry</a>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:auto;">
+            <a href="developer.html#platform" class="btn btn-primary btn-sm" data-i18n="products.p2.cloud.b1">Join the early-access list →</a>
+            <a href="https://www.volcengine.com/docs/82379/1541523" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-i18n="products.p2.cloud.b2">📖 View API docs</a>
+            <a href="about.html#contact" class="btn btn-ghost btn-sm" data-i18n="products.p2.cloud.b3">Enterprise inquiry</a>
           </div>
         </div>
       </div>
@@ -254,14 +253,14 @@
       <p class="section-desc" data-i18n="products.p3.desc">Organized by data type · high-quality teleop / EGO pre-training data · plus high-precision MoCap.</p>
     </div>
 
-    <div class="grid grid-3" id="device-grid-all"></div>
+    <div class="grid grid-4" id="device-grid-all"></div>
 
     <div class="cta-banner" style="margin-top:64px;">
       <h3 data-i18n="products.p3.cta.title">Bulk / education / OEM partnerships?</h3>
       <p data-i18n="products.p3.cta.desc">Education tier, OEM and developer-data-platform bundles available — contact us for tailored quotes.</p>
       <div class="cta-banner-btns">
         <a href="about.html#contact" class="btn btn-primary btn-lg" data-i18n="products.p3.cta.b1">Get a quote</a>
-        <a href="developer.html#mini-arm" class="btn btn-ghost btn-lg" data-i18n="products.p3.cta.b2">See entry-level ToC</a>
+        <a href="developer.html#mini-arm" class="btn btn-ghost btn-lg" data-i18n="products.p3.cta.b2" style="display:none;">See entry-level ToC</a>
       </div>
     </div>
   </div>
@@ -276,133 +275,76 @@
       <p class="section-desc" data-i18n="products.p4.desc">Deep integration with mainstream capture hardware — we don't reinvent wheels, we make data flow.</p>
     </div>
 
-    <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:28px;padding:14px 20px;background:var(--ocean-card-2);border-radius:8px;border:1px solid var(--ocean-line);font-size:13px;justify-content:center;">
-      <div style="display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:12px;height:12px;background:#10b981;border-radius:3px;"></span><span data-i18n="common.eco.integrated">Integrated</span></div>
-      <div style="display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:12px;height:12px;background:#2c7fbf;border-radius:3px;"></span><span data-i18n="common.eco.connected">Connected</span></div>
-      <div style="display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:12px;height:12px;background:#f97316;border-radius:3px;"></span><span data-i18n="common.eco.reference">Reference</span></div>
-    </div>
-
     <div class="grid grid-4">
 
-      <a href="https://github.com/TheRobotStudio/SO-ARM100" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/exo/so101-leader-follower.jpg);"></div>
-        <div class="eco-body">
-          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
-          <h4 class="eco-name">SO-101 leader-follower arm</h4>
-          <div class="eco-vendor">HuggingFace × TheRobotStudio</div>
-          <div class="eco-price">¥1.5k - 3k / pair</div>
+      <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:160px;background:url(assets/research/exo/so101-leader-follower.jpg) center/cover;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.10) 0%,rgba(15,37,64,0.55) 100%);"></div>
         </div>
-      </a>
+        <div style="padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;">
+          <h4 style="font-size:17px;font-weight:700;margin-bottom:8px;" data-i18n="products.p4.cat1.title">轻量级机械臂</h4>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:14px;" data-i18n="products.p4.cat1.desc">桌面级 · 教研 · 单/双臂遥操，开源生态成熟。</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;">
+            <span class="tag">ARX</span>
+            <span class="tag">AgileX 松灵</span>
+            <span class="tag">SO-101</span>
+            <span class="tag">ALOHA</span>
+            <span class="tag">GELLO</span>
+            <span class="tag">Koch</span>
+          </div>
+        </div>
+      </div>
 
-      <a href="https://www.manus-meta.com/products/metagloves-pro" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/exo/manus-metagloves-pro.png);"></div>
-        <div class="eco-body">
-          <div class="eco-rel b" data-i18n="common.eco.connected">Connected</div>
-          <h4 class="eco-name">Manus Metagloves Pro</h4>
-          <div class="eco-vendor">Manus VR · Netherlands</div>
-          <div class="eco-price">€1,000 - 5,000</div>
+      <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:160px;background:url(assets/scenes/industry.jpg) center/cover;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.10) 0%,rgba(15,37,64,0.55) 100%);"></div>
         </div>
-      </a>
+        <div style="padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;">
+          <h4 style="font-size:17px;font-weight:700;margin-bottom:8px;" data-i18n="products.p4.cat2.title">工业协作机械臂</h4>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:14px;" data-i18n="products.p4.cat2.desc">6-7 自由度 · 力控可选 · 面向产线协作与精密作业。</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;">
+            <span class="tag">UR</span>
+            <span class="tag">Franka Panda</span>
+            <span class="tag">Sawyer</span>
+            <span class="tag">ABB GoFa</span>
+            <span class="tag">KUKA iiwa</span>
+          </div>
+        </div>
+      </div>
 
-      <a href="https://haptx.com/" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/exo/haptx-gloves-g1.png);"></div>
-        <div class="eco-body">
-          <div class="eco-rel o" data-i18n="common.eco.reference">Reference</div>
-          <h4 class="eco-name">HaptX Gloves G1</h4>
-          <div class="eco-vendor">HaptX · USA</div>
-          <div class="eco-price">$10,000+ / pair</div>
+      <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:160px;background:url(assets/research/exo/mobile-aloha.png) center/cover;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.10) 0%,rgba(15,37,64,0.55) 100%);"></div>
         </div>
-      </a>
+        <div style="padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;">
+          <h4 style="font-size:17px;font-weight:700;margin-bottom:8px;" data-i18n="products.p4.cat3.title">移动升降机器人</h4>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:14px;" data-i18n="products.p4.cat3.desc">底盘 + 机械臂 / 升降立柱，扩展作业空间，覆盖 AGV / AMR 场景。</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;">
+            <span class="tag">AgileX Scout</span>
+            <span class="tag">AgileX Bunker</span>
+            <span class="tag">大象 myAGV</span>
+            <span class="tag">Fetch</span>
+            <span class="tag">UR + 升降柱</span>
+          </div>
+        </div>
+      </div>
 
-      <a href="https://aloha-2.github.io/" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/exo/aloha-bimanual.png);"></div>
-        <div class="eco-body">
-          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
-          <h4 class="eco-name">ALOHA bimanual teleop</h4>
-          <div class="eco-vendor">Stanford × Trossen</div>
-          <div class="eco-price">$20k+ full set</div>
+      <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:160px;background:url(assets/scenes/humanoid.jpg) center/cover;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.10) 0%,rgba(15,37,64,0.55) 100%);"></div>
         </div>
-      </a>
-
-      <a href="https://umi-gripper.github.io/" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/exo/umi-gripper.png);"></div>
-        <div class="eco-body">
-          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
-          <h4 class="eco-name">UMI handheld gripper</h4>
-          <div class="eco-vendor">Stanford · open-source</div>
-          <div class="eco-price">~$200 DIY</div>
+        <div style="padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;">
+          <h4 style="font-size:17px;font-weight:700;margin-bottom:8px;" data-i18n="products.p4.cat4.title">人形机器人</h4>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:14px;" data-i18n="products.p4.cat4.desc">全身遥操 · 多模态采集 · 对接主流人形整机平台。</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;">
+            <span class="tag">Fourier GR</span>
+            <span class="tag">HOPE-JR</span>
+            <span class="tag">Unitree G1</span>
+            <span class="tag">智元远征</span>
+            <span class="tag">优必选 Walker</span>
+          </div>
         </div>
-      </a>
-
-      <a href="https://wuphilipp.github.io/gello_site/" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/exo/gello-controller.jpg);"></div>
-        <div class="eco-body">
-          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
-          <h4 class="eco-name">GELLO low-cost teleop</h4>
-          <div class="eco-vendor">UCSD/CMU · open-source</div>
-          <div class="eco-price">~$500 DIY</div>
-        </div>
-      </a>
-
-      <a href="https://huggingface.co/blog/hopejr" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/exo/hopejr-humanoid.jpg);"></div>
-        <div class="eco-body">
-          <div class="eco-rel b" data-i18n="common.eco.connected">Connected</div>
-          <h4 class="eco-name">HOPE-JR humanoid</h4>
-          <div class="eco-vendor">HuggingFace × Pollen</div>
-          <div class="eco-price">$3,000 pre-order</div>
-        </div>
-      </a>
-
-      <a href="https://www.fftai.com" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/exo/fourier-actionnet.jpg);"></div>
-        <div class="eco-body">
-          <div class="eco-rel b" data-i18n="common.eco.connected">Connected</div>
-          <h4 class="eco-name">Fourier GR series</h4>
-          <div class="eco-vendor">Fourier Intelligence · Shanghai</div>
-          <div class="eco-price">¥100k+ body</div>
-        </div>
-      </a>
-
-      <a href="https://www.xsens.com/motion-capture/xsens-link-specifications" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/mocap/xsens-mvn-link.jpg);"></div>
-        <div class="eco-body">
-          <div class="eco-rel b" data-i18n="common.eco.connected">Connected</div>
-          <h4 class="eco-name">Xsens MVN Link</h4>
-          <div class="eco-vendor">Movella · Netherlands</div>
-          <div class="eco-price">Inquire (¥100k+)</div>
-        </div>
-      </a>
-
-      <a href="https://www.rokoko.com/products/smartsuit-pro" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/mocap/rokoko-smartsuit-pro2.webp);"></div>
-        <div class="eco-body">
-          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
-          <h4 class="eco-name">Rokoko Smartsuit Pro II</h4>
-          <div class="eco-vendor">Rokoko · Denmark</div>
-          <div class="eco-price">$2,295</div>
-        </div>
-      </a>
-
-      <a href="https://agibot-world.cn/" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/factory/agibot-data-factory.jpg);"></div>
-        <div class="eco-body">
-          <div class="eco-rel o" data-i18n="common.eco.reference">Reference</div>
-          <h4 class="eco-name">AgiBot Data Factory</h4>
-          <div class="eco-vendor">AgiBot · Shanghai</div>
-          <div class="eco-price">4000㎡ + 100 G1</div>
-        </div>
-      </a>
-
-      <a href="https://github.com/huggingface/lerobot" target="_blank" rel="noopener" class="card eco-card">
-        <div class="eco-img" style="background-image:url(assets/research/exo/koch-arm.jpg);"></div>
-        <div class="eco-body">
-          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
-          <h4 class="eco-name">Koch Robot Arm</h4>
-          <div class="eco-vendor">Koch · open-source</div>
-          <div class="eco-price">$300-500 DIY</div>
-        </div>
-      </a>
+      </div>
 
     </div>
 
@@ -414,6 +356,37 @@
 
 <footer class="footer">
   <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Dolphin Lynxi" />
+          <span data-i18n="nav.brand">Dolphin Lynxi</span>
+        </div>
+        <div class="footer-tag">
+          <span data-i18n="footer.company">Shanghai Dolphin Lynxi Technology Co., Ltd.</span><br/>
+          <span data-i18n="footer.address">📍 1F, No. 258 Pingyang Rd., Minhang, Shanghai</span><br/>
+          <span data-i18n="footer.email">📮 plumpost@sina.com</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col.products">Products</h4>
+        <a href="marketplace.html" data-i18n="footer.link.market">Lynxi Dataset Market</a>
+        <a href="dashboard.html" data-i18n="footer.link.demo">Toolchain Live Demo</a>
+        <a href="products.html#devices" data-i18n="footer.link.devices">Lynxi Capture Devices</a>
+        <a href="products.html" data-i18n="footer.link.overview">Product overview</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col.dev">Developers</h4>
+        <a href="developer.html#platform" data-i18n="footer.link.platform">All-in-one platform</a>
+        <a href="developer.html#oss" data-i18n="footer.link.oss">Open-source datasets</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col.about">About</h4>
+        <a href="about.html#about" data-i18n="footer.link.aboutUs">About us</a>
+        <a href="about.html#join" data-i18n="footer.link.join">Careers</a>
+        <a href="about.html#contact" data-i18n="footer.link.contact">Contact us</a>
+      </div>
+    </div>
     <div class="footer-bot">
       <div data-i18n="footer.bot.short">© 2026 Shanghai Dolphin Lynxi Technology Co., Ltd.</div>
       <div class="footer-slogan" data-i18n="footer.slogan">Data flows like tide, intelligence emerges</div>

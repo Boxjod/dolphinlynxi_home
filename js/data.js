@@ -291,30 +291,38 @@ window.DOLPHIN_DATA = (function () {
 
   /* -------- 数采设备 · 2 大主分类 + 1 补充组 -------- */
   const devices = [
+    { id: 'DEV-3015', name: '灵汐·轻量级机械臂', icon: '🦾',
+      image: 'assets/joycon.png', group: 'teleop',
+      category: '入门级桌面臂', price: 1299, status: '现货', hot: true,
+      features: [
+        '🦾 6 DOF 桌面臂 · 仅 0.8 kg',
+        '🕹️ Joy-Con 风格手柄遥操',
+        '✅ 已售 1000+ 套'
+      ],
+      desc: '学生 / 创客入门首选，30 分钟上手开始数采。' },
+
     // ╔════ Group A：含本体遥操数据（高质量）— 训练数据天花板 ════╗
     { id: 'DEV-3006', name: '灵汐 EXO 主从外骨骼套件', icon: '🦾',
       image: 'assets/search/EXO.png', group: 'teleop',
       category: 'EXO 外骨骼', price: 8999, priceSuffix: '起', status: '现货', hot: true, new: true,
       features: [
-        '🦾 单臂版 · 7 DOF · 力反馈 ±5N',
-        '🤲 双臂版 · 双手协作 · 5GHz 同步',
-        '🧍 半身人形版 · 14+3 DOF · 驱动人形',
-        '🧤 触觉手套 · 16 通道指尖力反馈（选配）',
-        '遥操延迟 < 5ms · 适配所有主流机械臂'
+        '🦾 单 / 双臂 / 半身人形三形态',
+        '🧤 触觉手套 · 力反馈 ±5N（选配）',
+        '遥操延迟 < 5ms'
       ],
-      desc: '一条产品线覆盖单臂/双臂/半身人形三种形态 + 触觉手套选配，按需组合。佩戴式"穿戴式机械臂"，动作 1:1 映射，告别控制器笨拙感。已与多家头部机器人本体厂商深度共建。' },
+      desc: '佩戴式外骨骼，动作 1:1 映射，已与多家头部本体厂商共建。' },
 
     { id: 'DEV-3013', name: '灵汐 VR-Pro 手柄遥操套件', icon: '🎮',
       image: 'assets/search/pico.jpeg', group: 'teleop',
       category: 'VR 手柄', price: 2599, status: '现货', new: true,
-      features: ['Meta Quest 3 / PICO 4 兼容','6 DOF 双手柄追踪','手柄→机械臂位姿映射','30Hz 同步采集'],
-      desc: '基于消费级 VR 头显的低成本遥操方案。一台 Quest 3 + Dolphin 适配器，万元以内即可开始高质量数采。' },
+      features: ['Quest 3 / PICO 4 兼容','6 DOF 双手柄追踪','30 Hz 同步采集'],
+      desc: '消费级 VR 头显 + Dolphin 适配器，万元内开始高质量数采。' },
 
     { id: 'DEV-3014', name: '灵汐 Vision-XR · Vision Pro 套件', icon: '🥽',
       image: 'assets/search/vision_pro.png', group: 'teleop',
       category: 'XR 沉浸遥操', price: 6999, status: '预订', new: true,
-      features: ['Apple Vision Pro 完美适配','眼动 + 手部追踪 双输入','沉浸式立体视觉遥操','支持双臂同步'],
-      desc: '使用 Vision Pro 的眼动追踪 + 手势识别进行高保真遥操。无须额外手柄，专家级数采体验，比传统手柄精度高 3 倍。' },
+      features: ['Vision Pro 完美适配','眼动 + 手部追踪','支持双臂同步'],
+      desc: 'Vision Pro 眼动 + 手势遥操，精度比传统手柄高 3 倍。' },
   ];
 
   /* -------- 5 门培训课程 -------- */

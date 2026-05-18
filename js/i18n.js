@@ -144,6 +144,17 @@
                             en: 'From datasets · toolchain · all-in-one platform to developer ecosystem — one provider of embodied-AI infrastructure.' },
     'home.svc.more':      { zh: '了解更多 →', en: 'Learn more →' },
 
+    'home.svc.s1.eyebrow': { zh: '服务 01', en: 'SERVICE 01' },
+    'home.svc.s2.eyebrow': { zh: '服务 02', en: 'SERVICE 02' },
+    'home.svc.s3.eyebrow': { zh: '服务 03', en: 'SERVICE 03' },
+    'home.svc.s4.eyebrow': { zh: '服务 04', en: 'SERVICE 04' },
+
+    'home.ds.s1.label':       { zh: '📦 物流',     en: '📦 Logistics' },
+    'home.ds.s2.label':       { zh: '🏭 工业制造', en: '🏭 Industrial' },
+    'home.ds.s3.label':       { zh: '🏠 家庭服务', en: '🏠 Home service' },
+    'home.ds.s4.label':       { zh: '🏥 医疗',     en: '🏥 Medical' },
+    'home.ds.status.coming':  { zh: '即将开放',     en: 'Coming soon' },
+
     'home.svc.s1.label':  { zh: '大规模数据集', en: 'Large-scale Datasets' },
     'home.svc.s1.desc':   { zh: '物流 · 工业 · 家庭 · 医疗 四大核心场景持续上新，含遥操 / EGO / 仿真多模态数据。',
                             en: 'Logistics · Industrial · Home · Medical — four core scenes expanding, with teleop / EGO / sim multimodal data.' },
@@ -196,6 +207,10 @@
     'products.head.b4':   { zh: '④ 兼容生态', en: '④ Compatible Ecosystem' },
 
     'products.p1.eyebrow': { zh: 'PRODUCT 01 · DATASETS', en: 'PRODUCT 01 · DATASETS' },
+    'products.p1.s1.eyebrow': { zh: '场景 01', en: 'SCENE 01' },
+    'products.p1.s2.eyebrow': { zh: '场景 02', en: 'SCENE 02' },
+    'products.p1.s3.eyebrow': { zh: '场景 03', en: 'SCENE 03' },
+    'products.p1.s4.eyebrow': { zh: '场景 04', en: 'SCENE 04' },
     'products.p1.title':   { zh: '灵汐·大规模数据集', en: 'Lynxi · Large-scale Datasets' },
     'products.p1.desc':    { zh: '四大核心行业，公开数据集持续上新。',
                              en: 'Four core industries, catalog continuously expanding.' },
@@ -229,6 +244,7 @@
     'products.p2.h3.t':    { zh: '采集→管理→训练一站式', en: 'Capture → Manage → Train in one' },
     'products.p2.h3.d':    { zh: '数据进，模型出。',
                              en: 'Data in, models out.' },
+    'products.p2.deploy.title': { zh: '📦 灵汐部署形态 · 一体机与云算力', en: '📦 Lynxi deployment options · Appliance & Cloud' },
     'products.p2.appl.title': { zh: '💎 灵汐一体机 · 私有化部署形态', en: '💎 Lynxi Appliance · On-prem form-factor' },
     'products.p2.banner.eyebrow': { zh: 'PRIVATE DEPLOYMENT · 私有化交付', en: 'PRIVATE DEPLOYMENT · On-prem delivery' },
     'products.p2.banner.title':   { zh: '数据不出场 · 算力一体交付', en: 'Data on-site · compute bundled' },
@@ -383,6 +399,23 @@
     'products.p4.title':   { zh: '兼容硬件生态', en: 'Compatible hardware ecosystem' },
     'products.p4.desc':    { zh: '深度对接主流数采设备，不造轮子，只让数据流更顺。',
                              en: 'Deep integration with mainstream hardware — no reinvention.' },
+
+    'products.p4.cat1.title': { zh: '轻量级机械臂', en: 'Lightweight arms' },
+    'products.p4.cat1.desc':  { zh: '桌面级 · 教研 · 单/双臂遥操，开源生态成熟。',
+                                en: 'Desktop · research · single/dual-arm teleop · rich open-source ecosystem.' },
+
+    'products.p4.cat2.title': { zh: '工业协作机械臂', en: 'Collaborative industrial arms' },
+    'products.p4.cat2.desc':  { zh: '6-7 自由度 · 力控可选 · 面向产线协作与精密作业。',
+                                en: '6-7 DOF · optional force control · for production-line collaboration and precision tasks.' },
+
+    'products.p4.cat3.title': { zh: '移动升降机器人', en: 'Mobile & lift-augmented robots' },
+    'products.p4.cat3.desc':  { zh: '底盘 + 机械臂 / 升降立柱，扩展作业空间，覆盖 AGV / AMR 场景。',
+                                en: 'Chassis + arm / lift column · expanded workspace · AGV / AMR scenarios.' },
+
+    'products.p4.cat4.title': { zh: '人形机器人', en: 'Humanoid robots' },
+    'products.p4.cat4.desc':  { zh: '全身遥操 · 多模态采集 · 对接主流人形整机平台。',
+                                en: 'Full-body teleop · multimodal capture · connects to mainstream humanoid platforms.' },
+
     'products.p4.note':    { zh: '💡 <strong>客户带任何上述硬件来，灵汐工具链直接吃</strong>（采集 / 对齐 / LeRobot 格式导出全跑通）。',
                              en: '💡 <strong>Bring any device above — Lynxi ingests it directly</strong> (capture / alignment / LeRobot export all wired up).' },
 
@@ -404,6 +437,9 @@
     'dev.s1.login':    { zh: '🚀 一站式开发者平台', en: '🚀 All-in-one developer platform' },
     'dev.s1.loginHint':{ zh: '加入早期体验列表 · 免费额度即将开放',
                          en: 'Join early access · free trial coming soon' },
+    'dev.s1.step1.eyebrow': { zh: '步骤 1', en: 'STEP 1' },
+    'dev.s1.step2.eyebrow': { zh: '步骤 2', en: 'STEP 2' },
+    'dev.s1.step3.eyebrow': { zh: '步骤 3', en: 'STEP 3' },
     'dev.s1.step1.label': { zh: '下载数据集', en: 'Download dataset' },
     'dev.s1.step1.desc':  { zh: '海豚自营/开源/购买', en: 'In-house / open-source / purchased' },
     'dev.s1.step2.label': { zh: '弹性 GPU 训练', en: 'Elastic GPU training' },

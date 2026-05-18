@@ -1492,4 +1492,18 @@ body.drawer-open { overflow: hidden; }
   #toolchain div[style*="padding:48px"][style*="linear-gradient"] h3 {
     font-size: 20px !important;
   }
+
+  /* ─── 2026-05-18 新结构卡片图区高度收敛（手机端） ─── */
+  /* PRODUCT 02 deployment grid-2 双栏卡：一体机白底图区 + 灵汐云背景图区，inline height:200px → 140px */
+  div[style*="height:200px"] {
+    height: 140px !important;
+  }
+  /* PRODUCT 02 一体机产品照 server.png，inline max-height:170px → 110px */
+  img[style*="max-height:170px"] {
+    max-height: 110px !important;
+  }
+  /* PRODUCT 01 4 个场景卡 + PRODUCT 04 4 个分类卡 + index 4 个服务卡：inline height:160px → 120px */
+  div[style*="height:160px"] {
+    height: 120px !important;
+  }
 }
