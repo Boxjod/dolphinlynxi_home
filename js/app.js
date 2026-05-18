@@ -431,7 +431,7 @@
         { href: '#toolchain', icon: '💎', title: en ? 'Data Management Toolchain' : '灵汐·数据管理工具链',
                                           desc:  en ? 'On-prem appliance · capture + manage + train full stack' : '私有化一体机 · 采集 + 管理 + 训练全栈' },
         { href: '#devices',   icon: '🥽', title: en ? 'Capture devices' : '数采设备',
-                                          desc:  en ? 'EGO + EXO + MoCap product lines' : 'EGO + EXO + MoCap 三大产品线' },
+                                          desc:  en ? 'Teleop / VR / XR capture lineup' : '遥操 / VR / XR 采集设备' },
       ],
       developer: [
         { href: '#platform',  icon: '🌐', title: en ? 'All-in-one platform' : '一站式服务平台',

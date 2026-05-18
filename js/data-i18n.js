@@ -61,17 +61,6 @@
     'DEV-3014': { name: 'Lynxi Vision-XR · Vision Pro Kit', category: 'XR immersive teleop',     status: 'Pre-order',
       features: ['Apple Vision Pro fully supported','Eye + hand tracking dual input','Immersive stereoscopic teleop','Dual-arm sync supported'],
       desc: 'High-fidelity teleop via Vision Pro eye + gesture tracking. No extra controllers. Pro-grade capture, 3× precision over conventional handles.' },
-    'DEV-3001': { name: 'Lynxi EGO · Full 5-Piece Kit',     category: 'EGO flagship kit',         status: 'In stock',
-      features: ['👓 Stereo smart glasses (camera hidden in frame)','📷 Chest camera (necklace / magnetic dual wear)','⌚ Infrared wristband (1mm-level dual-hand tracking)','🦵 Ankle locators (dual-foot IMU)','📱 Mobile app live sync · LeRobot-format output'],
-      desc: 'First-person EGO capture for the humanoid era. Head/chest/hands/feet whole-body sensing — lighter than Aria, cheaper than pro mocap. Sold as full 5-piece set only.' },
-    'DEV-3009': { name: 'Lynxi MoCap · Optical + Inertial Kit', category: 'MoCap (high precision)', status: 'In stock / Pre-order',
-      features: [
-        '🎯 Optical · 24 IR cameras + 41 markers · 0.1mm precision',
-        '🎭 Inertial · 18 IMU nodes · camera-free, no occlusion',
-        'Fuses with EGO kit · sub-mm precision',
-        'LeRobot-format output · software license + on-site deployment'
-      ],
-      desc: 'Pick your weapon — optical or inertial. Optical (24-camera array + 41 markers) for academic / film / medical-grade precision; inertial (18 IMUs) for outdoor / tight-space capture. Fuses with EGO kit for sub-mm precision.' },
   };
 
   // -------- Courses (5) --------

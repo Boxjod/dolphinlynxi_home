@@ -315,25 +315,6 @@ window.DOLPHIN_DATA = (function () {
       category: 'XR 沉浸遥操', price: 6999, status: '预订', new: true,
       features: ['Apple Vision Pro 完美适配','眼动 + 手部追踪 双输入','沉浸式立体视觉遥操','支持双臂同步'],
       desc: '使用 Vision Pro 的眼动追踪 + 手势识别进行高保真遥操。无须额外手柄，专家级数采体验，比传统手柄精度高 3 倍。' },
-
-    // ╔════ Group B：EGO 数据（预训练）— 第一视角全身感知 · 一套全包 ════╗
-    { id: 'DEV-3001', name: '灵汐 EGO 完整套装（5 件套）', icon: '🥽',
-      image: 'assets/search/ego.png', group: 'ego',
-      category: 'EGO 旗舰套装', price: 5999, status: '现货', hot: true, new: true,
-      features: ['👓 双目智能眼镜（摄像头藏支架）','📷 胸前相机（项链/磁吸双佩戴）','⌚ 红外手环（双手 1mm 级追踪）','🦵 脚踝定位器（双脚 IMU）','📱 手机 App 实时同步 · LeRobot 格式输出'],
-      desc: '为人形机器人时代设计的第一视角 EGO 数据采集套装。一套搞定头/胸/手/脚的全身感知，比 Aria 更轻、比专业动捕更便宜。整套购买，5 件套不分开销售。' },
-
-    // ╔════ Group C：高精度动捕补充 — 与 A/B 两组数据融合 ════╗
-    { id: 'DEV-3009', name: '灵汐 MoCap 动捕套装（光学 + 惯性）', icon: '🎭',
-      image: 'assets/search/cloth.jpg', group: 'extra',
-      category: 'MoCap 高精度动捕', price: 0, status: '现货 / 预订', new: true,
-      features: [
-        '🎯 光学版 · 24 红外摄像头 + 41 标记点 · 0.1mm 精度',
-        '🎭 惯性版 · 18 节点 IMU · 无需场地不怕遮挡',
-        '与 EGO 套装数据融合 · 亚毫米级精度',
-        'LeRobot 标准格式输出 · 软件许可 + 上门部署'
-      ],
-      desc: '光学 + 惯性双方案任选。光学版（24 相机阵列 + 41 标记点）适合学术 / 电影 / 医疗级精度场景；惯性版（18 节点 IMU）户外 / 狭小空间都能用，可与 EGO 套装融合达亚毫米级精度。' },
   ];
 
   /* -------- 5 门培训课程 -------- */
