@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n-title="tasks.title">Task Hall · Dolphin Lynxi</title>
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.png" alt="Dolphin Lynxi" />
+      <div class="nav-brand-text"><span data-i18n="nav.brand">Dolphin Lynxi</span><div class="nav-brand-sub" data-i18n="nav.brandSub">DOLPHIN LYNXI</div></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="products.html" data-i18n="nav.products">Products</a>
+      <a href="developer.html" class="active" data-i18n="nav.developer">Developers</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-ghost btn-sm" data-i18n="common.btn.login">Sign in</a>
+      <a href="about.html#contact" class="btn btn-primary btn-sm" data-i18n="common.btn.contact">Enterprise</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1 data-i18n="tasks.head.h1">Task hall</h1>
+  <p data-i18n="tasks.head.desc">Enterprise · platform · crowdsourced · annotation · matched on demand, billed per frame/episode/package</p>
+</header>
+
+<section class="section section-bg-mid" style="padding-top:60px;">
+  <div class="section-inner">
+
+    <div class="grid grid-4" style="margin-bottom:48px">
+      <div class="card type-filter-card" data-task-type="collect" style="text-align:center;padding:32px 20px;cursor:pointer;">
+        <div style="font-size:42px;margin-bottom:12px">📥</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:6px" data-i18n="tasks.type.collect.title">Capture calls</div>
+        <p style="color:var(--text-secondary);font-size:13px;line-height:1.6" data-i18n="tasks.type.collect.desc">Enterprise customers post targeted capture jobs · pay-per-episode</p>
+        <div style="margin-top:12px;font-size:12px;color:var(--wave-cyan);font-weight:600;" data-i18n="tasks.type.filterHint">Click to filter →</div>
+      </div>
+      <div class="card type-filter-card" data-task-type="verify" style="text-align:center;padding:32px 20px;cursor:pointer;">
+        <div style="font-size:42px;margin-bottom:12px">✅</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:6px" data-i18n="tasks.type.verify.title">Data verification</div>
+        <p style="color:var(--text-secondary);font-size:13px;line-height:1.6" data-i18n="tasks.type.verify.desc">Score datasets / classify failures · pay-per-item</p>
+        <div style="margin-top:12px;font-size:12px;color:var(--wave-cyan);font-weight:600;" data-i18n="tasks.type.filterHint">Click to filter →</div>
+      </div>
+      <div class="card type-filter-card" data-task-type="label" style="text-align:center;padding:32px 20px;cursor:pointer;">
+        <div style="font-size:42px;margin-bottom:12px">🖍️</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:6px" data-i18n="tasks.type.label.title">Crowd labeling</div>
+        <p style="color:var(--text-secondary);font-size:13px;line-height:1.6" data-i18n="tasks.type.label.desc">Object segmentation / action segmentation / semantic labels · pay-per-frame</p>
+        <div style="margin-top:12px;font-size:12px;color:var(--wave-cyan);font-weight:600;" data-i18n="tasks.type.filterHint">Click to filter →</div>
+      </div>
+      <div class="card type-filter-card" data-task-type="custom" style="text-align:center;padding:32px 20px;cursor:pointer;">
+        <div style="font-size:42px;margin-bottom:12px">🏆</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:6px" data-i18n="tasks.type.custom.title">Custom mega-jobs</div>
+        <p style="color:var(--text-secondary);font-size:13px;line-height:1.6" data-i18n="tasks.type.custom.desc">Million-scale data orders / industry SOP capture projects, bidding open to certified vendors only</p>
+        <div style="margin-top:12px;font-size:12px;color:var(--wave-cyan);font-weight:600;" data-i18n="tasks.type.filterHint">Click to filter →</div>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-row">
+        <span class="filter-label" data-i18n="tasks.filter.type">Type</span>
+        <div class="filter-chips" data-filter="type">
+          <span class="filter-chip active" data-value="全部" data-i18n="common.arm.all">All</span>
+          <span class="filter-chip" data-value="collect">📥 <span data-i18n="tasks.type.collect.title">Capture calls</span></span>
+          <span class="filter-chip" data-value="verify">✅ <span data-i18n="tasks.type.verify.title">Data verification</span></span>
+          <span class="filter-chip" data-value="label">🖍️ <span data-i18n="tasks.type.label.title">Crowd labeling</span></span>
+          <span class="filter-chip" data-value="custom">🏆 <span data-i18n="tasks.type.custom.title">Custom mega-jobs</span></span>
+        </div>
+        <input type="text" id="task-search" class="filter-search" placeholder="🔍 Search tasks..." data-i18n-attr="placeholder:tasks.filter.search" />
+      </div>
+      <div class="filter-row">
+        <span class="filter-label" data-i18n="tasks.filter.scene">Scene</span>
+        <div class="filter-chips" data-filter="scene">
+          <span class="filter-chip active" data-value="全部" data-i18n="common.arm.all">All</span>
+          <span class="filter-chip" data-value="餐饮" data-i18n="common.scene.food">F&amp;B</span>
+          <span class="filter-chip" data-value="家庭服务" data-i18n="common.scene.home">Home service</span>
+          <span class="filter-chip" data-value="工业制造" data-i18n="common.scene.industry">Industrial</span>
+          <span class="filter-chip" data-value="物流仓储" data-i18n="common.scene.logistics">Logistics</span>
+          <span class="filter-chip" data-value="零售连锁" data-i18n="common.scene.retail">Retail chain</span>
+          <span class="filter-chip" data-value="医疗医药" data-i18n="common.scene.medical">Medical</span>
+          <span class="filter-chip" data-value="艺术文创" data-i18n="common.scene.arts">Arts</span>
+          <span class="filter-chip" data-value="通用" data-i18n="common.scene.general">General</span>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label" data-i18n="tasks.filter.level">Difficulty</span>
+        <div class="filter-chips" data-filter="level">
+          <span class="filter-chip active" data-value="全部" data-i18n="common.arm.all">All</span>
+          <span class="filter-chip" data-value="入门" data-i18n="common.level.entry">Entry</span>
+          <span class="filter-chip" data-value="中级" data-i18n="common.level.mid">Intermediate</span>
+          <span class="filter-chip" data-value="高级" data-i18n="common.level.high">Advanced</span>
+          <span class="filter-chip" data-value="大单" data-i18n="common.level.big">Major</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-count" id="result-count" data-i18n-html="tasks.result"><strong>12</strong> tasks in progress</div>
+
+    <div class="grid grid-3" id="task-grid"></div>
+
+    <div class="cta-banner">
+      <h3 data-i18n="tasks.cta.title">Become a Dolphin Certified Capture Vendor</h3>
+      <p data-i18n="tasks.cta.desc">Once certified: priority on major jobs · platform traffic support · ongoing revenue opportunities</p>
+      <div class="cta-banner-btns">
+        <a href="#" class="btn btn-pink btn-lg" data-i18n="tasks.cta.b1">Apply for certification</a>
+        <a href="#" class="btn btn-ghost btn-lg" data-i18n="tasks.cta.b2">Learn about certification</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bot">
+      <div data-i18n="footer.bot.short">© 2026 Shanghai Dolphin Lynxi Technology Co., Ltd.</div>
+      <div class="footer-slogan" data-i18n="footer.slogan">Data flows like tide, intelligence emerges</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/data-i18n.js"></script>
+<script src="js/app.js"></script>
+<script>
+  const { D, attachFilter, renderTaskCard } = window.DOLPHIN;
+
+  document.querySelectorAll('.type-filter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const type = card.dataset.taskType;
+      const chip = document.querySelector(`[data-filter="type"] .filter-chip[data-value="${type}"]`);
+      if (chip) {
+        chip.click();
+        document.querySelector('.filter-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  function setupFilter() {
+    attachFilter({
+      chips: ['type', 'scene', 'level'],
+      search: '#task-search',
+      items: D.tasks,
+      container: '#task-grid',
+      render: renderTaskCard,
+      fields: { type: '全部', scene: '全部', level: '全部' },
+    });
+  }
+  setupFilter();
+  window.addEventListener('languagechange', setupFilter);
+</script>
+
+</body>
+</html>

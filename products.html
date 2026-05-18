@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n-title="products.title">Products · Dolphin Lynxi</title>
+  <meta name="description" content="海豚灵汐三大产品：灵汐·大规模数据集 · 灵汐数据管理工具链 · Dolphin 数采设备" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.png" alt="Dolphin Lynxi" />
+      <div class="nav-brand-text"><span data-i18n="nav.brand">Dolphin Lynxi</span><div class="nav-brand-sub" data-i18n="nav.brandSub">DOLPHIN LYNXI</div></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="products.html" class="active" data-i18n="nav.products">Products</a>
+      <a href="developer.html" data-i18n="nav.developer">Developers</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-ghost btn-sm" data-i18n="common.btn.login">Sign in</a>
+      <a href="about.html#contact" class="btn btn-primary btn-sm" data-i18n="common.btn.contact">Enterprise</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1 data-i18n="products.head.h1">Product lineup</h1>
+  <p data-i18n="products.head.desc">Data · Tools · Hardware — the utilities of the embodied-AI industry.</p>
+  <div style="margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="#datasets" class="btn btn-ghost btn-sm" data-i18n="products.head.b1">① Large-scale Datasets</a>
+    <a href="#toolchain" class="btn btn-ghost btn-sm" data-i18n="products.head.b2">② Data Management Toolchain</a>
+    <a href="#devices" class="btn btn-ghost btn-sm" data-i18n="products.head.b3">③ Capture Devices</a>
+    <a href="#ecosystem" class="btn btn-ghost btn-sm" data-i18n="products.head.b4">④ Compatible Ecosystem</a>
+  </div>
+</header>
+
+<!-- ============ ① Lynxi · Large-scale Datasets ============ -->
+<section class="section section-bg-mid" id="datasets">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-eyebrow" data-i18n="products.p1.eyebrow">PRODUCT 01 · DATASETS</div>
+      <h2 class="section-title" data-i18n="products.p1.title">Lynxi · Large-scale Datasets</h2>
+      <p class="section-desc" data-i18n="products.p1.desc">Covering four core industries (Logistics · Industrial · Home · Medical) — public dataset catalog continuously expanding.</p>
+    </div>
+
+    <div class="grid grid-4" style="margin-bottom:64px;">
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="height:160px;background:url(assets/scenes/logistics.jpg) center/cover;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.75) 100%);"></div>
+          <div style="position:absolute;bottom:14px;left:18px;color:white;z-index:2;">
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;">SCENE 01</div>
+            <div style="font-size:22px;font-weight:700;line-height:1.2;" data-i18n="home.ds.s1.label">📦 Logistics</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px 24px;text-align:center;">
+          <p style="color:var(--text-secondary);font-size:13px;line-height:1.7;margin-bottom:14px;" data-i18n="products.p1.s1.desc">Sorting · packing · folding · stress tests — joint capture with industry partners.</p>
+          <div style="display:flex;justify-content:center;gap:14px;font-family:var(--font-mono);color:var(--wave-cyan);font-size:13px;margin-bottom:14px;">
+            <span data-i18n="home.ds.status.coming">Coming soon</span>
+          </div>
+          <a href="marketplace.html?scene=物流仓储" class="btn btn-ghost btn-sm" data-i18n="products.p1.s1.btn">Browse logistics datasets →</a>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="height:160px;background:url(assets/scenes/industry.jpg) center/cover;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.75) 100%);"></div>
+          <div style="position:absolute;bottom:14px;left:18px;color:white;z-index:2;">
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;">SCENE 02</div>
+            <div style="font-size:22px;font-weight:700;line-height:1.2;" data-i18n="home.ds.s2.label">🏭 Industrial</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px 24px;text-align:center;">
+          <p style="color:var(--text-secondary);font-size:13px;line-height:1.7;margin-bottom:14px;" data-i18n="products.p1.s2.desc">PCB SMT · screwdriving · EVA packing — co-built with 3C / EMS partners.</p>
+          <div style="display:flex;justify-content:center;gap:14px;font-family:var(--font-mono);color:var(--wave-cyan);font-size:13px;margin-bottom:14px;">
+            <span data-i18n="home.ds.status.coming">Coming soon</span>
+          </div>
+          <a href="marketplace.html?scene=工业制造" class="btn btn-ghost btn-sm" data-i18n="products.p1.s2.btn">Browse industrial datasets →</a>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="height:160px;background:url(assets/scenes/home.jpg) center/cover;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.75) 100%);"></div>
+          <div style="position:absolute;bottom:14px;left:18px;color:white;z-index:2;">
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;">SCENE 03</div>
+            <div style="font-size:22px;font-weight:700;line-height:1.2;" data-i18n="home.ds.s3.label">🏠 Home service</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px 24px;text-align:center;">
+          <p style="color:var(--text-secondary);font-size:13px;line-height:1.7;margin-bottom:14px;" data-i18n="products.p1.s3.desc">Fold clothes · tidy desk · pull sheets · open bottles — home base for dual-arm deformables.</p>
+          <div style="display:flex;justify-content:center;gap:14px;font-family:var(--font-mono);color:var(--wave-cyan);font-size:13px;margin-bottom:14px;">
+            <span data-i18n="home.ds.status.coming">Coming soon</span>
+          </div>
+          <a href="marketplace.html?scene=家庭服务" class="btn btn-ghost btn-sm" data-i18n="products.p1.s3.btn">Browse home datasets →</a>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="height:160px;background:url(assets/scenes/medical.jpg) center/cover;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.75) 100%);"></div>
+          <div style="position:absolute;bottom:14px;left:18px;color:white;z-index:2;">
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;">SCENE 04</div>
+            <div style="font-size:22px;font-weight:700;line-height:1.2;" data-i18n="home.ds.s4.label">🏥 Medical</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px 24px;text-align:center;">
+          <p style="color:var(--text-secondary);font-size:13px;line-height:1.7;margin-bottom:14px;" data-i18n="products.p1.s4.desc">Herb sorting · surgical tool handoff — built to hospital-grade compliance.</p>
+          <div style="display:flex;justify-content:center;gap:14px;font-family:var(--font-mono);color:var(--wave-cyan);font-size:13px;margin-bottom:14px;">
+            <span data-i18n="home.ds.status.coming">Coming soon</span>
+          </div>
+          <a href="marketplace.html?scene=医疗医药" class="btn btn-ghost btn-sm" data-i18n="products.p1.s4.btn">Browse medical datasets →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head-left">
+      <div>
+        <h3 style="font-size:24px;font-weight:700;" data-i18n="products.p1.feat.title">Featured datasets</h3>
+        <p style="color:var(--text-secondary);margin-top:8px;" data-i18n="products.p1.feat.desc">In-house / Enterprise / Crowdsourced — three sourcing modes, catalog continuously expanding.</p>
+      </div>
+      <a href="marketplace.html" class="btn btn-primary" data-i18n="products.p1.feat.btn">Browse all datasets →</a>
+    </div>
+    <div class="grid grid-4" id="dataset-grid"></div>
+  </div>
+</section>
+
+<!-- ============ ② Lynxi · Data Management Toolchain ============ -->
+<section class="section section-bg-deep" id="toolchain">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-eyebrow" data-i18n="products.p2.eyebrow">PRODUCT 02 · LYNXI</div>
+      <h2 class="section-title" data-i18n="products.p2.title">Lynxi · Data Management Toolchain</h2>
+      <p class="section-desc" data-i18n="products.p2.desc">On-prem embodied-AI data infrastructure · capture + manage + train, delivered as an appliance.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin-bottom:48px;">
+      <div style="padding:20px;background:rgba(8,145,178,0.08);border:1px solid rgba(8,145,178,0.22);border-radius:var(--radius);text-align:center;">
+        <div style="font-size:36px;margin-bottom:10px;">🏢</div>
+        <div style="font-weight:700;margin-bottom:4px;" data-i18n="products.p2.h1.t">On-prem deployment</div>
+        <div style="font-size:12px;color:var(--text-dim);" data-i18n="products.p2.h1.d">Data never leaves your network · meets compliance & data-sovereignty requirements</div>
+      </div>
+      <div style="padding:20px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.22);border-radius:var(--radius);text-align:center;">
+        <div style="font-size:36px;margin-bottom:10px;">📦</div>
+        <div style="font-weight:700;margin-bottom:4px;" data-i18n="products.p2.h2.t">Appliance delivery</div>
+        <div style="font-size:12px;color:var(--text-dim);" data-i18n="products.p2.h2.d">Software pre-installed · power-on ready · no ops team required</div>
+      </div>
+      <div style="padding:20px;background:rgba(74,222,128,0.06);border:1px solid rgba(74,222,128,0.2);border-radius:var(--radius);text-align:center;">
+        <div style="font-size:36px;margin-bottom:10px;">🔄</div>
+        <div style="font-weight:700;margin-bottom:4px;" data-i18n="products.p2.h3.t">Capture → Manage → Train in one</div>
+        <div style="font-size:12px;color:var(--text-dim);" data-i18n="products.p2.h3.d">Data enters from capture, trained models come out directly</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:22px;font-weight:700;margin-bottom:24px;" data-i18n="products.p2.appl.title">💎 Lynxi Appliance · On-prem form-factor</h3>
+
+    <div class="card" style="padding:0;margin-bottom:28px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:280px 1fr;gap:0;align-items:stretch;">
+        <div style="background:#ffffff;border-right:1px solid var(--ocean-line);display:flex;align-items:center;justify-content:center;padding:24px;min-height:260px;">
+          <img src="assets/server.png" alt="Lynxi appliance" style="max-height:240px;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(15,37,64,0.12));" />
+        </div>
+        <div style="padding:28px 32px;">
+          <div style="font-size:11px;color:var(--wave-cyan);letter-spacing:2px;margin-bottom:6px;font-weight:700;" data-i18n="products.p2.banner.eyebrow">PRIVATE DEPLOYMENT · On-prem delivery</div>
+          <h3 style="font-size:22px;font-weight:700;margin-bottom:10px;" data-i18n="products.p2.banner.title">Data on-site · compute bundled</h3>
+          <p style="color:var(--text-secondary);font-size:14px;line-height:1.7;margin-bottom:14px;" data-i18n="products.p2.banner.desc">Designed for high-compliance, high-privacy scenarios. Pre-installed with the Lynxi toolchain + full LeRobot stack — out-of-the-box. End-to-end pipeline runs on your intranet; 0% of data / models / traffic leaves.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="tag" data-i18n="products.p2.banner.tag1">0% data egress</span>
+            <span class="tag" data-i18n="products.p2.banner.tag2">Rack & tower form-factors</span>
+            <span class="tag" data-i18n="products.p2.banner.tag3">On-site + remote support</span>
+            <span class="tag pink" data-i18n="products.p2.banner.tag4">For gov / research / defence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:22px;font-weight:700;margin-bottom:24px;" data-i18n="products.p2.cloud.title">☁️ Lynxi Cloud · Elastic compute subscription</h3>
+    <div class="card" style="padding:0;margin-bottom:64px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:280px 1fr;gap:0;align-items:stretch;">
+        <div style="background:url(assets/devices/gpu-cloud.jpg) center/cover;min-height:200px;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(44,127,191,0.55) 0%,rgba(8,145,178,0.85) 100%);"></div>
+          <div style="position:absolute;bottom:18px;left:20px;color:white;z-index:2;">
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.85;font-weight:600;" data-i18n="products.p2.cloud.eyebrow">CLOUD SUBSCRIPTION</div>
+            <div style="font-size:28px;font-weight:800;line-height:1.2;margin-top:6px;" data-i18n="products.p2.cloud.priceMain">Coming soon</div>
+          </div>
+        </div>
+        <div style="padding:28px 32px;">
+          <div style="font-size:11px;color:var(--wave-pink);letter-spacing:2px;margin-bottom:6px;font-weight:700;" data-i18n="products.p2.cloud.lead">Don't want an appliance? Stay tuned for our cloud compute →</div>
+          <h3 style="font-size:22px;font-weight:700;margin-bottom:10px;" data-i18n="products.p2.cloud.name">Lynxi Cloud · Shared GPU training compute</h3>
+          <p style="color:var(--text-secondary);font-size:14px;line-height:1.7;margin-bottom:14px;" data-i18n="products.p2.cloud.desc">On-demand GPU compute with the full LeRobot stack pre-installed — sign up for early access and we'll notify you on launch. Built for SMBs without IT teams, individual developers and educators.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+            <span class="tag" data-i18n="products.p2.cloud.tag1">4090 / A100 / H100 elastic scheduling</span>
+            <span class="tag" data-i18n="products.p2.cloud.tag2">Full LeRobot stack pre-installed</span>
+            <span class="tag" data-i18n="products.p2.cloud.tag3">One-click ACT / π0 / GR00T</span>
+            <span class="tag pink" data-i18n="products.p2.cloud.tag4">Powered by Volcano Ark</span>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+            <a href="developer.html#platform" class="btn btn-primary" data-i18n="products.p2.cloud.b1">Join the early-access list →</a>
+            <a href="https://www.volcengine.com/docs/82379/1541523" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="products.p2.cloud.b2">📖 View API docs</a>
+            <a href="about.html#contact" class="btn btn-ghost" data-i18n="products.p2.cloud.b3">Enterprise inquiry</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;" data-i18n="products.p2.arch.title">⚙️ Lynxi Toolchain · Data-platform capability architecture</h3>
+    <p style="color:var(--text-secondary);font-size:14px;margin-bottom:28px;" data-i18n="products.p2.arch.desc">From capture to deliverable model — a battle-tested three-step pipeline. One toolchain · LeRobot-native · production-grade.</p>
+
+    <div class="flow-wrap">
+      <div class="flow-step flow-step-1">
+        <div class="flow-step-badge"><span class="flow-step-num">01</span></div>
+        <div class="flow-step-eyebrow" data-i18n="products.p2.flow.s1.eyebrow">STEP 01</div>
+        <div class="flow-step-title" data-i18n="products.p2.flow.s1.title">采集接入</div>
+      </div>
+
+      <div class="flow-arrow" aria-hidden="true">→</div>
+
+      <div class="flow-step flow-step-2">
+        <div class="flow-step-badge"><span class="flow-step-num">02</span></div>
+        <div class="flow-step-eyebrow" data-i18n="products.p2.flow.s2.eyebrow">STEP 02</div>
+        <div class="flow-step-title" data-i18n="products.p2.flow.s2.title">加工提质</div>
+      </div>
+
+      <div class="flow-arrow" aria-hidden="true">→</div>
+
+      <div class="flow-step flow-step-3">
+        <div class="flow-step-badge"><span class="flow-step-num">03</span></div>
+        <div class="flow-step-eyebrow" data-i18n="products.p2.flow.s3.eyebrow">STEP 03</div>
+        <div class="flow-step-title" data-i18n="products.p2.flow.s3.title">训练交付</div>
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg, rgba(44,127,191,0.10), rgba(8,145,178,0.05));border:1px solid var(--ocean-line-strong);border-radius:var(--radius-lg);padding:48px;text-align:center;">
+      <h3 style="font-size:26px;font-weight:700;margin-bottom:12px;" data-i18n="products.p2.demo.title">Want a preview of the Lynxi toolchain?</h3>
+      <p style="color:var(--text-secondary);margin-bottom:32px;font-size:15px;" data-i18n="products.p2.demo.desc">Pre-release cockpit preview — devices, tasks, orders and billing. Full release coming soon.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="dashboard.html" class="btn btn-primary btn-lg" data-i18n="products.p2.demo.b1">View live demo →</a>
+        <a href="about.html#contact" class="btn btn-ghost btn-lg" data-i18n="products.p2.demo.b2">Request on-site POC</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ③ Capture devices ============ -->
+<section class="section section-bg-mid" id="devices">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-eyebrow" data-i18n="products.p3.eyebrow">PRODUCT 03 · HARDWARE</div>
+      <h2 class="section-title" data-i18n="products.p3.title">Lynxi · Capture Device Lineup</h2>
+      <p class="section-desc" data-i18n="products.p3.desc">Organized by data type · high-quality teleop / EGO pre-training data · plus high-precision MoCap.</p>
+    </div>
+
+    <div class="grid grid-3" id="device-grid-all"></div>
+
+    <div class="cta-banner" style="margin-top:64px;">
+      <h3 data-i18n="products.p3.cta.title">Bulk / education / OEM partnerships?</h3>
+      <p data-i18n="products.p3.cta.desc">Education tier, OEM and developer-data-platform bundles available — contact us for tailored quotes.</p>
+      <div class="cta-banner-btns">
+        <a href="about.html#contact" class="btn btn-primary btn-lg" data-i18n="products.p3.cta.b1">Get a quote</a>
+        <a href="developer.html#mini-arm" class="btn btn-ghost btn-lg" data-i18n="products.p3.cta.b2">See entry-level ToC</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ④ Compatible hardware ecosystem ============ -->
+<section class="section section-bg-deep" id="ecosystem">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-eyebrow" data-i18n="products.p4.eyebrow">PRODUCT 04 · ECOSYSTEM</div>
+      <h2 class="section-title" data-i18n="products.p4.title">Compatible hardware ecosystem</h2>
+      <p class="section-desc" data-i18n="products.p4.desc">Deep integration with mainstream capture hardware — we don't reinvent wheels, we make data flow.</p>
+    </div>
+
+    <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:28px;padding:14px 20px;background:var(--ocean-card-2);border-radius:8px;border:1px solid var(--ocean-line);font-size:13px;justify-content:center;">
+      <div style="display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:12px;height:12px;background:#10b981;border-radius:3px;"></span><span data-i18n="common.eco.integrated">Integrated</span></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:12px;height:12px;background:#2c7fbf;border-radius:3px;"></span><span data-i18n="common.eco.connected">Connected</span></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:12px;height:12px;background:#f97316;border-radius:3px;"></span><span data-i18n="common.eco.reference">Reference</span></div>
+    </div>
+
+    <div class="grid grid-4">
+
+      <a href="https://github.com/TheRobotStudio/SO-ARM100" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/exo/so101-leader-follower.jpg);"></div>
+        <div class="eco-body">
+          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
+          <h4 class="eco-name">SO-101 leader-follower arm</h4>
+          <div class="eco-vendor">HuggingFace × TheRobotStudio</div>
+          <div class="eco-price">¥1.5k - 3k / pair</div>
+        </div>
+      </a>
+
+      <a href="https://www.manus-meta.com/products/metagloves-pro" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/exo/manus-metagloves-pro.png);"></div>
+        <div class="eco-body">
+          <div class="eco-rel b" data-i18n="common.eco.connected">Connected</div>
+          <h4 class="eco-name">Manus Metagloves Pro</h4>
+          <div class="eco-vendor">Manus VR · Netherlands</div>
+          <div class="eco-price">€1,000 - 5,000</div>
+        </div>
+      </a>
+
+      <a href="https://haptx.com/" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/exo/haptx-gloves-g1.png);"></div>
+        <div class="eco-body">
+          <div class="eco-rel o" data-i18n="common.eco.reference">Reference</div>
+          <h4 class="eco-name">HaptX Gloves G1</h4>
+          <div class="eco-vendor">HaptX · USA</div>
+          <div class="eco-price">$10,000+ / pair</div>
+        </div>
+      </a>
+
+      <a href="https://aloha-2.github.io/" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/exo/aloha-bimanual.png);"></div>
+        <div class="eco-body">
+          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
+          <h4 class="eco-name">ALOHA bimanual teleop</h4>
+          <div class="eco-vendor">Stanford × Trossen</div>
+          <div class="eco-price">$20k+ full set</div>
+        </div>
+      </a>
+
+      <a href="https://umi-gripper.github.io/" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/exo/umi-gripper.png);"></div>
+        <div class="eco-body">
+          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
+          <h4 class="eco-name">UMI handheld gripper</h4>
+          <div class="eco-vendor">Stanford · open-source</div>
+          <div class="eco-price">~$200 DIY</div>
+        </div>
+      </a>
+
+      <a href="https://wuphilipp.github.io/gello_site/" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/exo/gello-controller.jpg);"></div>
+        <div class="eco-body">
+          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
+          <h4 class="eco-name">GELLO low-cost teleop</h4>
+          <div class="eco-vendor">UCSD/CMU · open-source</div>
+          <div class="eco-price">~$500 DIY</div>
+        </div>
+      </a>
+
+      <a href="https://huggingface.co/blog/hopejr" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/exo/hopejr-humanoid.jpg);"></div>
+        <div class="eco-body">
+          <div class="eco-rel b" data-i18n="common.eco.connected">Connected</div>
+          <h4 class="eco-name">HOPE-JR humanoid</h4>
+          <div class="eco-vendor">HuggingFace × Pollen</div>
+          <div class="eco-price">$3,000 pre-order</div>
+        </div>
+      </a>
+
+      <a href="https://www.fftai.com" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/exo/fourier-actionnet.jpg);"></div>
+        <div class="eco-body">
+          <div class="eco-rel b" data-i18n="common.eco.connected">Connected</div>
+          <h4 class="eco-name">Fourier GR series</h4>
+          <div class="eco-vendor">Fourier Intelligence · Shanghai</div>
+          <div class="eco-price">¥100k+ body</div>
+        </div>
+      </a>
+
+      <a href="https://www.xsens.com/motion-capture/xsens-link-specifications" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/mocap/xsens-mvn-link.jpg);"></div>
+        <div class="eco-body">
+          <div class="eco-rel b" data-i18n="common.eco.connected">Connected</div>
+          <h4 class="eco-name">Xsens MVN Link</h4>
+          <div class="eco-vendor">Movella · Netherlands</div>
+          <div class="eco-price">Inquire (¥100k+)</div>
+        </div>
+      </a>
+
+      <a href="https://www.rokoko.com/products/smartsuit-pro" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/mocap/rokoko-smartsuit-pro2.webp);"></div>
+        <div class="eco-body">
+          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
+          <h4 class="eco-name">Rokoko Smartsuit Pro II</h4>
+          <div class="eco-vendor">Rokoko · Denmark</div>
+          <div class="eco-price">$2,295</div>
+        </div>
+      </a>
+
+      <a href="https://agibot-world.cn/" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/factory/agibot-data-factory.jpg);"></div>
+        <div class="eco-body">
+          <div class="eco-rel o" data-i18n="common.eco.reference">Reference</div>
+          <h4 class="eco-name">AgiBot Data Factory</h4>
+          <div class="eco-vendor">AgiBot · Shanghai</div>
+          <div class="eco-price">4000㎡ + 100 G1</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/huggingface/lerobot" target="_blank" rel="noopener" class="card eco-card">
+        <div class="eco-img" style="background-image:url(assets/research/exo/koch-arm.jpg);"></div>
+        <div class="eco-body">
+          <div class="eco-rel g" data-i18n="common.eco.integrated">Integrated</div>
+          <h4 class="eco-name">Koch Robot Arm</h4>
+          <div class="eco-vendor">Koch · open-source</div>
+          <div class="eco-price">$300-500 DIY</div>
+        </div>
+      </a>
+
+    </div>
+
+    <div style="margin-top:36px;padding:24px;background:var(--ocean-card-2);border:1px solid var(--ocean-line);border-radius:var(--radius);text-align:center;color:var(--text-secondary);font-size:14px;line-height:1.7;" data-i18n-html="products.p4.note">
+      💡 <strong>We don't reinvent wheels</strong>: every device above is already integrated with the Lynxi toolchain for capture / timestamp alignment / LeRobot-format export. <strong>Bring any of these and our data platform ingests it directly.</strong>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bot">
+      <div data-i18n="footer.bot.short">© 2026 Shanghai Dolphin Lynxi Technology Co., Ltd.</div>
+      <div class="footer-slogan" data-i18n="footer.slogan">Data flows like tide, intelligence emerges</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/data-i18n.js"></script>
+<script src="js/app.js"></script>
+<script>
+  const { D, renderDatasetCard, renderDeviceCard, fill, bindDatasetCards } = window.DOLPHIN;
+  function renderAll() {
+    fill('#dataset-grid', D.datasets.slice(0, 8).map(renderDatasetCard).join(''));
+    fill('#device-grid-all', D.devices.map(renderDeviceCard).join(''));
+    bindDatasetCards();
+  }
+  renderAll();
+  window.addEventListener('languagechange', renderAll);
+</script>
+
+</body>
+</html>
