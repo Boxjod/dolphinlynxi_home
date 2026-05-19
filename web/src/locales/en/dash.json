@@ -1,6 +1,6 @@
 {
   "head": { "h1": "Data management platform", "desc": "Devices / tasks / QA / compute / billing — all in one cockpit" },
-  "demo": { "note": "Demo preview · UI mock-up only. Data below is illustrative. Production version coming soon." },
+  "demo": { "label": "Demo preview · UI mock-up only.", "note": "Data below is illustrative. Production version coming soon." },
   "side": { "ops": "Operations", "dev": "Devices", "model": "Models", "acct": "Account" },
   "menu": {
     "cockpit": "📊 Data cockpit", "mydata": "📂 My datasets", "task": "📥 Capture tasks", "qa": "✅ QA pipeline",
