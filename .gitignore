@@ -21,6 +21,9 @@ node_modules/
 dist/
 build/
 .cache/
+.next/
+.turbo/
+out/
 
 # 日志
 *.log
@@ -30,6 +33,13 @@ logs/
 .env
 .env.local
 .env.*.local
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
 
 # Claude 工作目录
 .claude/
