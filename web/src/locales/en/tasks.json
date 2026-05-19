@@ -1,0 +1,18 @@
+{
+  "head": { "h1": "Task hall", "desc": "Enterprise / platform / crowdsourced / labeling — billed per frame / episode / package" },
+  "type": {
+    "collect": { "title": "Capture calls", "desc": "Targeted capture jobs · pay-per-episode" },
+    "verify": { "title": "Data verification", "desc": "Score / classify failures · pay-per-item" },
+    "label": { "title": "Crowd labeling", "desc": "Segmentation / action / semantic labels · pay-per-frame" },
+    "custom": { "title": "Custom mega-jobs", "desc": "Million-scale orders / SOP projects, certified vendors only" },
+    "filterHint": "Click to filter →"
+  },
+  "filter": { "type": "Type", "scene": "Scene", "level": "Difficulty", "search": "🔍 Search tasks..." },
+  "result": "{{count}} tasks in progress",
+  "cta": {
+    "title": "Become a Dolphin Certified Capture Vendor",
+    "desc": "Certified: priority on jobs · traffic support · steady revenue",
+    "b1": "Apply for certification",
+    "b2": "Learn about certification"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "company": "Shanghai Dolphin Lynxi Technology Co., Ltd.",
+  "address": "📍 1F, No. 258 Pingyang Rd., Minhang, Shanghai",
+  "email": "📮 plumpost@sina.com",
+  "col": { "products": "Products", "dev": "Developers", "about": "About" },
+  "link": {
+    "market": "Lynxi Dataset Market", "demo": "Toolchain Live Demo", "devices": "Lynxi Capture Devices",
+    "overview": "Product overview", "platform": "All-in-one platform", "oss": "Open-source datasets",
+    "aboutUs": "About us", "join": "Careers", "contact": "Contact us"
+  },
+  "bot": {
+    "copyright": "© 2026 Shanghai Dolphin Lynxi Technology Co., Ltd. · Shanghai · Minhang · ICP filing pending",
+    "short": "© 2026 Shanghai Dolphin Lynxi Technology Co., Ltd."
+  },
+  "slogan": "Data flows like tide, intelligence emerges"
+}

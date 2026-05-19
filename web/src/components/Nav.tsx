@@ -150,7 +150,6 @@ export default function Nav({ active }: { active?: string }) {
                 onFocus={link.href !== '/' ? openMega : undefined}
               >
                 {t(link.key)}
-                {link.href !== '/' && <span className="nav-arrow">▾</span>}
               </Link>
             ))}
 

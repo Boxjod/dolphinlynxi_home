@@ -1,0 +1,74 @@
+{
+  "head": { "h1": "Product lineup", "desc": "Data · Tools · Hardware — three-in-one.", "b1": "① Large-scale Datasets", "b2": "② Data Management Toolchain", "b3": "③ Capture Devices", "b4": "④ Compatible Ecosystem" },
+  "p1": {
+    "eyebrow": "PRODUCT 01 · DATASETS", "title": "Lynxi · Large-scale Datasets", "desc": "Four core industries, catalog continuously expanding.",
+    "s1": { "eyebrow": "SCENE 01", "desc": "Sorting · packing · folding · stress tests.", "btn": "Browse logistics datasets →" },
+    "s2": { "eyebrow": "SCENE 02", "desc": "PCB SMT · screwdriving · EVA packing.", "btn": "Browse industrial datasets →" },
+    "s3": { "eyebrow": "SCENE 03", "desc": "Fold clothes · tidy desk · pull sheets · open bottles.", "btn": "Browse home datasets →" },
+    "s4": { "eyebrow": "SCENE 04", "desc": "Herb sorting · surgical tool handoff.", "btn": "Browse medical datasets →" },
+    "feat": { "title": "Featured datasets", "desc": "In-house / Enterprise / Crowdsourced — three sources.", "btn": "Browse all datasets →" }
+  },
+  "p2": {
+    "eyebrow": "PRODUCT 02 · LYNXI", "title": "Lynxi · Data Management Toolchain", "desc": "On-prem · capture + manage + train, all-in-one appliance.",
+    "h1": { "t": "On-prem deployment", "d": "Data stays in-network · compliance-ready" },
+    "h2": { "t": "Appliance delivery", "d": "Pre-installed · power-on ready" },
+    "h3": { "t": "Capture → Manage → Train in one", "d": "Data in, models out." },
+    "deploy": { "title": "📦 Lynxi deployment options · Appliance & Cloud" },
+    "appl": { "title": "💎 Lynxi Appliance · On-prem form-factor" },
+    "banner": {
+      "eyebrow": "PRIVATE DEPLOYMENT · On-prem delivery", "title": "Data on-site · compute bundled",
+      "desc": "For high-compliance scenarios. Pre-installed Lynxi toolchain + full LeRobot stack. End-to-end on your intranet.",
+      "tag1": "0% data egress", "tag2": "Rack & tower form-factors", "tag3": "On-site + remote support", "tag4": "For gov / research / defence"
+    },
+    "pro": {
+      "cat": "FLAGSHIP · Large enterprise", "name": "Lynxi One Pro", "sub": "2U rack-mount · datacenter grade",
+      "f1": "4 × NVIDIA H100 / H200 GPU", "f2": "1 TB DDR5 + 32 TB NVMe SSD",
+      "f3": "Pre-installed Lynxi toolchain + full LeRobot stack", "f4": "Designed for large-fleet capture concurrency", "f5": "3-year on-site service + upgrade subscription"
+    },
+    "lite": {
+      "cat": "LITE · Mid-size team", "name": "Lynxi One Lite", "sub": "Tower workstation · office-deployable",
+      "f1": "2 × NVIDIA A100 GPU", "f2": "256 GB DDR5 + 8 TB NVMe SSD",
+      "f3": "Pre-installed Lynxi toolchain · single-user ready", "f4": "Designed for team-scale capture concurrency", "f5": "1-year remote support + upgrade subscription"
+    },
+    "refPrice": "Reference price", "inquiry": "Inquire", "status": "Status", "coming": "Coming soon · Reserve now",
+    "cloud": {
+      "title": "☁️ Lynxi Cloud · Elastic compute subscription", "eyebrow": "CLOUD SUBSCRIPTION", "priceMain": "Coming soon",
+      "lead": "Don't want an appliance? Stay tuned for our cloud compute →", "name": "Lynxi Cloud · Shared GPU training compute",
+      "desc": "On-demand GPU + pre-installed LeRobot. For SMBs, developers and educators.",
+      "tag1": "4090 / A100 / H100 elastic scheduling", "tag2": "Full LeRobot stack pre-installed", "tag3": "One-click ACT / π0 / GR00T", "tag4": "Powered by Volcano Ark",
+      "b1": "Join the early-access list →", "b2": "📖 View API docs", "b3": "Enterprise inquiry"
+    },
+    "arch": { "title": "⚙️ Lynxi Toolchain · From capture to model in three steps", "desc": "One toolchain · LeRobot-native · production-grade." },
+    "flow": {
+      "s1": {
+        "eyebrow": "STEP 01", "title": "Capture & Ingest", "desc": "Plug-and-play · ms alignment · one-click LeRobot export.",
+        "t1": "👓 Smart glasses", "t2": "🧤 Tactile gloves", "t3": "⌚ AprilTag wristband",
+        "t4": "🦾 Mocap suit", "t5": "⏱️ Spatio-temporal sync", "t6": "🔄 LeRobot unified format"
+      },
+      "s2": {
+        "eyebrow": "STEP 02", "title": "Refine & Augment", "desc": "Auto-label · multi-dim QA · Real2Sim2Real 10× amplification.",
+        "t1": "🎯 Auto annotation", "t2": "⌨️ Command annotation", "t3": "🔀 Long-horizon decomposition", "t4": "🏆 Auto reward-signal labeling",
+        "t5": "🌈 Multi-dim QA", "t6": "📈 Trajectory smoothing", "t7": "💎 AI data augmentation", "t8": "🔁 Real2Sim2Real loop"
+      },
+      "s3": {
+        "eyebrow": "STEP 03", "title": "Train & Deliver", "desc": "PB-scale pool + distributed cluster · triple eval · deliver deployable models.",
+        "t1": "🗄️ PB-scale data pool", "t2": "🖥️ Distributed training", "t3": "📊 Sim + real-machine eval",
+        "t4": "🤖 Real-machine eval", "t5": "🔄 Sim2Real eval", "t6": "☁️ Cloud-edge-device deploy"
+      },
+      "stat1": "Steps · one toolchain", "stat2": "Multimodal data pool", "stat3": "Evaluation closures", "stat4": "LeRobot-native"
+    },
+    "demo": { "title": "Want a preview of the Lynxi toolchain?", "desc": "Pre-release cockpit preview. Full release coming soon.", "b1": "View live demo →", "b2": "Request on-site POC" }
+  },
+  "p3": {
+    "eyebrow": "PRODUCT 03 · HARDWARE", "title": "Lynxi · Capture Device Lineup", "desc": "Teleop / EGO pre-training · with high-precision MoCap.",
+    "cta": { "title": "Bulk / education / OEM partnerships?", "desc": "Education / OEM / developer bundles available — contact sales.", "b1": "Get a quote", "b2": "See entry-level ToC" }
+  },
+  "p4": {
+    "eyebrow": "PRODUCT 04 · ECOSYSTEM", "title": "Compatible hardware ecosystem", "desc": "Deep integration with mainstream hardware — no reinvention.",
+    "cat1": { "title": "Lightweight arms", "desc": "Desktop · research · single/dual-arm teleop · rich open-source ecosystem." },
+    "cat2": { "title": "Collaborative industrial arms", "desc": "6-7 DOF · optional force control · for production-line collaboration and precision tasks." },
+    "cat3": { "title": "Mobile & lift-augmented robots", "desc": "Chassis + arm / lift column · expanded workspace · AGV / AMR scenarios." },
+    "cat4": { "title": "Humanoid robots", "desc": "Full-body teleop · multimodal capture · connects to mainstream humanoid platforms." },
+    "note": "💡 Bring any device above — Lynxi ingests it directly (capture / alignment / LeRobot export all wired up)."
+  }
+}

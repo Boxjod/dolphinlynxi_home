@@ -1,0 +1,32 @@
+{
+  "btn": {
+    "login": "登录",
+    "contact": "企业咨询",
+    "contactShort": "联系我们",
+    "viewMore": "了解更多",
+    "viewAll": "查看全部",
+    "apply": "📨 投递简历",
+    "priceInquiry": "联系销售"
+  },
+  "badge": { "coming": "即将上市" },
+  "learnMore": "了解更多 →",
+  "vendor": { "self": "海豚自营", "bigB": "精选合集", "crowd": "众包采集" },
+  "scene": {
+    "food": "餐饮", "home": "家庭服务", "industry": "工业制造", "logistics": "物流仓储",
+    "retail": "零售连锁", "medical": "医疗医药", "service": "服务连锁", "edu": "教育",
+    "eduToy": "教育玩具", "arts": "艺术文创", "clean": "清洁服务", "precision": "精细服务",
+    "fun": "娱乐零售", "general": "通用"
+  },
+  "arm": { "single": "单臂", "dual": "双臂", "all": "全部" },
+  "unit": {
+    "episodes": "episodes", "duration": "时长", "frames": "帧",
+    "free": "免费", "published": "发布于", "successRate": "成功率", "latency": "推理延迟"
+  },
+  "task": {
+    "collect": "征集", "verify": "验证", "label": "标注", "custom": "定制",
+    "client": "委托方：", "scene": "场景：", "device": "设备：", "deadline": "截止：",
+    "level": "难度：", "negotiate": "面议", "accept": "立即接单", "submit": "提交方案"
+  },
+  "level": { "entry": "入门", "mid": "中级", "high": "高级", "big": "大单" },
+  "eco": { "integrated": "已集成", "connected": "已对接", "reference": "对标参考" }
+}

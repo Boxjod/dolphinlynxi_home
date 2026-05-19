@@ -1,0 +1,23 @@
+{
+  "head": { "h1": "Data management platform", "desc": "Devices / tasks / QA / compute / billing — all in one cockpit" },
+  "demo": { "note": "Demo preview · UI mock-up only. Data below is illustrative. Production version coming soon." },
+  "side": { "ops": "Operations", "dev": "Devices", "model": "Models", "acct": "Account" },
+  "menu": {
+    "cockpit": "📊 Data cockpit", "mydata": "📂 My datasets", "task": "📥 Capture tasks", "qa": "✅ QA pipeline",
+    "cap": "🦾 Capture devices", "cam": "📸 Camera nodes", "gpu": "☁️ GPU compute", "train": "🧠 Training jobs",
+    "repo": "🚀 Model registry", "deploy": "📡 Inference deploy", "wallet": "💎 My resources", "bill": "📑 Billing", "team": "⚙️ Team settings"
+  },
+  "greet": "Hello, EMS customer · today's data overview",
+  "kpi": {
+    "frames": "Frames captured today", "devices": "Devices online", "qa": "QA pass rate", "credits": "Frames processed this month",
+    "vsYesterday": "vs yesterday", "newOnline": "newly online", "vsLastMonth": "vs last month"
+  },
+  "chart": { "title": "📈 Capture frame trend, last 14 days", "unit": "unit: 10k frames · live" },
+  "dev": {
+    "title": "🦾 Online capture devices · Top 10", "viewAll": "View all →",
+    "col": { "id": "Device ID", "loc": "Location", "frames": "Frames today", "status": "Status" }
+  },
+  "task": { "title": "📥 Capture tasks in progress", "new": "+ New task", "col": { "task": "Task", "prog": "Progress", "bud": "Budget", "status": "Status" } },
+  "ord": { "title": "📑 Recent orders / financial activity", "export": "Export bill →", "col": { "id": "Order ID", "type": "Type", "desc": "Description", "amt": "Amount", "time": "Time", "status": "Status" } },
+  "status": { "capturing": "Capturing", "slow": "Slow", "offline": "Offline", "ok": "OK", "warn": "Alert", "paid": "Paid", "pending": "Pending" }
+}
