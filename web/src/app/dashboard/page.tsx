@@ -1,9 +1,26 @@
-// ============================================================
-// 数据看板页（Dashboard）—— 演示 / Demo 版
-// 说明：所有数据均为静态 Mock，仅用于展示 UI 效果
-//       真实数据接入见 services/api/
-// 文案：i18n.ts dash.* 键
-// ============================================================
+/**
+ * @file 数据管理看板页（Dashboard Page）—— 纯演示 / Demo 版
+ *
+ * 说明：
+ *   所有数据均为静态 Mock 常量，仅用于展示平台 UI 设计效果，
+ *   不涉及真实 API 调用。真实数据接入方案参见 services/api/。
+ *
+ * 页面结构：
+ *   - 页头（含 Demo 警示横幅）
+ *   - 侧边栏菜单（CSS 默认隐藏，预留后续展开交互）
+ *   - 主内容区：
+ *     · KPI 指标卡片（3 列）——  日采集帧数 / 在线设备 / QA 合格率
+ *     · 采集趋势柱图（纯 CSS 渲染，14 天数据）
+ *     · 采集设备状态表（10 行 Mock 设备）
+ *     · 任务进度 + 订单记录（2 列并排）
+ *
+ * 文案：i18n.ts → dash.* 键
+ *
+ * 注意：
+ *   - 柱图高度通过 (当日值 / 最大值) * 100% 计算相对比例
+ *   - 设备/任务/订单的状态颜色统一通过 STATUS_COLOR 映射表管理
+ *   - 侧边栏使用 .dash-sidebar CSS 类控制显示/隐藏
+ */
 'use client';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +28,9 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
 // ── KPI 卡片数据（Mock）────────────────────────────────────────
-// key 对应 i18n 键 dash.kpi.{key}；note 对应 dash.kpi.{note}
+// key：对应 i18n 键 dash.kpi.{key}（指标名称）
+// note：对应 i18n 键 dash.kpi.{note}（环比说明，如"较昨日"）
+// delta：环比变化值（正增长显示为绿色）
 const KPI = [
   { key: 'frames',  value: '1,248,600', unit: '帧',  delta: '+12%', note: 'vsYesterday'  },
   { key: 'devices', value: '47',        unit: '台',  delta: '+3',   note: 'newOnline'    },
@@ -19,7 +38,8 @@ const KPI = [
 ];
 
 // ── 折线/柱状图数据（Mock）────────────────────────────────────
-// 表示最近 14 天的日采集帧数（万帧），用于渲染比例柱图
+// 表示最近 14 天的日采集帧数（单位：万帧），数值用于计算各柱的相对高度百分比
+// 渲染为纯 CSS 柱图（无第三方图表库依赖），每根柱高度 = (值 / 最大值) * 100%
 const CHART_DATA = [42,58,65,51,78,90,85,112,98,105,130,145,138,162];
 
 // ── 采集设备列表（Mock）───────────────────────────────────────
@@ -55,8 +75,10 @@ const ORDERS = [
   { id:'ORD-20250515', type:'标注',   desc:'轨迹标注·80,000帧', time:'2025-05-15', status:'pending' },
 ];
 
-// ── 侧边栏菜单分组 ─────────────────────────────────────────────
-// sectionKey 对应 dash.side.{key}；items 对应 dash.menu.{item}
+// ── 侧边栏菜单分组配置 ──────────────────────────────────────────
+// sectionKey：菜单分组标题的 i18n 键后缀（dash.side.{sectionKey}）
+// items：该分组下的菜单项，每项对应 i18n 键 dash.menu.{item}
+// 菜单项点击后只更新 activeMenu 状态（高亮样式），暂无路由跳转
 const MENU_GROUPS = [
   { sectionKey:'ops',   items: ['cockpit','mydata','task','qa'] },
   { sectionKey:'dev',   items: ['cap','cam'] },
@@ -64,8 +86,9 @@ const MENU_GROUPS = [
   { sectionKey:'acct',  items: ['wallet','bill','team'] },
 ];
 
-// ── 状态颜色映射 ──────────────────────────────────────────────
-// 设备状态、任务状态、订单状态共用此 Map
+// ── 状态颜色统一映射 ──────────────────────────────────────────
+// 设备状态（capturing/slow/offline）、任务状态（ok/warn）、
+// 订单状态（paid/pending）共用此 Map，实现全页状态色彩一致性
 const STATUS_COLOR: Record<string, string> = {
   capturing:'var(--wave-cyan)', slow:'#f59e0b', offline:'var(--text-dim)',
   ok:'#22c55e', warn:'#f59e0b', paid:'#22c55e', pending:'#f59e0b',
@@ -73,9 +96,9 @@ const STATUS_COLOR: Record<string, string> = {
 
 export default function DashboardPage() {
   const { t } = useTranslation();
-  // 当前激活的侧边栏菜单项（默认驾驶舱）
+  // 当前激活的侧边栏菜单项（默认"驾驶舱"，即概览视图）
   const [activeMenu, setActiveMenu] = useState('cockpit');
-  // 图表最大值，用于计算各柱的相对高度百分比
+  // 柱图最大值：用于计算各柱的相对高度百分比（保证最高柱 = 100%）
   const maxChart = Math.max(...CHART_DATA);
 
   return (

@@ -1,17 +1,27 @@
-// ============================================================
-// 关于我们页（About）—— 3 大板块
-//   S1 关于海豚灵汐  S2 加入我们（招聘）  S3 联系我们
-// 文案：i18n.ts about.* 键
-// 注意：S1 段落含 <strong> HTML 标记，必须用 dangerouslySetInnerHTML 渲染
-// ============================================================
+/**
+ * @file 关于我们页（About Page）—— 3 大板块
+ *
+ * 页面结构：
+ *   S1 关于海豚灵汐（#about）—— 品牌故事 + Slogan 拆解（数据如潮 × 灵汐而至）
+ *   S2 加入我们（#join）      —— 招聘板块，分精选职位（大卡含职责/要求）和普通职位（小卡）
+ *   S3 联系我们（#contact）   —— 邮箱 + 公司地址两列卡片
+ *
+ * 文案：i18n.ts → about.* / common.* 键
+ *
+ * 注意：
+ *   - S1 段落含 <strong> HTML 标记做色彩强调，必须用 dangerouslySetInnerHTML 渲染
+ *   - 投递按钮使用 mailto 链接并预填职位标题作为邮件主题
+ *   - 精选职位展示 r1-r5（职责）+ q1-q5（要求）共 10 条列表项
+ */
 'use client';
 import { useTranslation } from 'react-i18next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
-// 精选职位（展示为大卡片，含职责 + 要求详情）
+// ── 职位配置 ──────────────────────────────────────────────────
+// 精选职位（展示为大卡片，含完整的职责 r1-r5 + 要求 q1-q5 详情）
 const FEATURED_JOBS = ['job1', 'job2'] as const;
-// 普通职位（展示为小卡片，仅含简介）
+// 普通职位（展示为小卡片，仅含简介和投递按钮，适合快速浏览）
 const REGULAR_JOBS  = ['job3', 'job4', 'job5', 'job6', 'job7'] as const;
 
 export default function AboutPage() {
@@ -37,7 +47,8 @@ export default function AboutPage() {
         <section className="section section-bg-mid" id="about">
           <div className="section-inner" style={{ maxWidth: 920 }}>
 
-            {/* 五段叙述性文字，p1/p3/p4 含色彩强调 <strong>，需 dangerouslySetInnerHTML */}
+            {/* 五段叙述性文字，使用循环渲染 p1~p5 */}
+            {/* p1/p3/p4 含 <strong> 标签做色彩强调（如品牌名、定位语句高亮），需 dangerouslySetInnerHTML */}
             <div style={{ background: 'var(--ocean-card)', padding: 48, borderRadius: 'var(--radius-lg)', border: '1px solid var(--ocean-line)' }}>
               {(['p1','p2','p3','p4','p5'] as const).map((p, i) => (
                 <p key={p} style={{ fontSize: 17, lineHeight: 1.9, color: 'var(--text-secondary)', marginBottom: i < 4 ? 20 : 0 }}

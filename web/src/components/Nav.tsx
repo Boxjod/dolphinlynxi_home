@@ -1,3 +1,15 @@
+/**
+ * @file Nav.tsx — 全站顶部导航栏
+ *
+ * 功能概览：
+ * 1. 桌面端：渲染水平导航链接，鼠标悬停时展开三列式 Mega 菜单（产品 / 开发者 / 关于）。
+ * 2. 移动端（≤1100px）：通过汉堡按钮控制侧边抽屉（mobile-drawer），
+ *    抽屉内按分组展示与 Mega 菜单相同的子链接。
+ * 3. 集成 LanguageSwitcher 组件，支持中英文即时切换。
+ *
+ * @param active — 当前高亮的路径（如 '/' '/products'），
+ *                 由父级 Layout 传入以标记活动导航项。
+ */
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -5,6 +17,7 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 
+/** 顶部导航的路由配置，key 对应 i18n 翻译键 */
 const NAV_HREFS = [
   { href: '/',          key: 'nav.home' },
   { href: '/products',  key: 'nav.products' },
@@ -14,11 +27,19 @@ const NAV_HREFS = [
 
 export default function Nav({ active }: { active?: string }) {
   const { t, i18n } = useTranslation();
+  /** 移动端侧边抽屉的开关状态 */
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  /** 桌面端 Mega 菜单的展开状态 */
   const [isMegaOpen, setIsMegaOpen] = useState(false);
   const isEn = i18n.language?.toLowerCase().startsWith('en');
+  /** 用于 Mega 菜单延迟关闭的计时器，防止鼠标移出瞬间菜单抖动消失 */
   const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  /**
+   * 根据当前语言构建移动端菜单的完整数据。
+   * 包含分组标签 + 各分组的子链接（标题、描述、锚点地址）。
+   * 同一份数据也被桌面端 Mega 菜单复用，保持两端内容一致。
+   */
   const mobileMenu = useMemo(() => {
     const en = i18n.language?.toLowerCase().startsWith('en');
     return {
@@ -79,11 +100,19 @@ export default function Nav({ active }: { active?: string }) {
     };
   }, [i18n.language]);
 
+  /**
+   * 副作用：抽屉打开时给 body 添加 'drawer-open' 类，
+   * 供全局 CSS 锁定页面滚动（overflow:hidden），关闭时移除。
+   */
   useEffect(() => {
     document.body.classList.toggle('drawer-open', isDrawerOpen);
     return () => document.body.classList.remove('drawer-open');
   }, [isDrawerOpen]);
 
+  /**
+   * 副作用：窗口宽度回到桌面端（>1100px）时自动关闭移动端抽屉，
+   * 避免用户在小屏打开抽屉后拉宽窗口导致 UI 遮挡。
+   */
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth > 1100) {
@@ -96,6 +125,10 @@ export default function Nav({ active }: { active?: string }) {
 
   const closeDrawer = () => setIsDrawerOpen(false);
 
+  /**
+   * 打开 Mega 菜单。如果存在延迟关闭的计时器则先取消，
+   * 确保鼠标在导航链接与 Mega 面板间滑动时不会误关。
+   */
   const openMega = () => {
     if (hideTimerRef.current) {
       clearTimeout(hideTimerRef.current);
@@ -104,6 +137,10 @@ export default function Nav({ active }: { active?: string }) {
     setIsMegaOpen(true);
   };
 
+  /**
+   * 延迟 140ms 关闭 Mega 菜单，给用户在导航项与下拉面板之间
+   * 移动鼠标留出缓冲时间，避免菜单闪关。
+   */
   const closeMegaDelayed = () => {
     if (hideTimerRef.current) {
       clearTimeout(hideTimerRef.current);
@@ -111,6 +148,7 @@ export default function Nav({ active }: { active?: string }) {
     hideTimerRef.current = setTimeout(() => setIsMegaOpen(false), 140);
   };
 
+  /** 组件卸载时清理延迟关闭的计时器，防止内存泄漏 */
   useEffect(() => {
     return () => {
       if (hideTimerRef.current) {
@@ -121,8 +159,10 @@ export default function Nav({ active }: { active?: string }) {
 
   return (
     <>
+      {/* ====== 顶部导航栏 ====== */}
       <nav className="nav">
         <div className="nav-inner">
+          {/* 品牌 Logo + 文字，点击回首页 */}
           <Link href="/" className="nav-brand" onClick={closeDrawer}>
             <img src="/assets/logo.png" alt="Dolphin Lynxi" />
             <div className="nav-brand-text">
@@ -131,11 +171,13 @@ export default function Nav({ active }: { active?: string }) {
             </div>
           </Link>
 
+          {/* 桌面端导航链接区域 + Mega 下拉面板 */}
           <div
             className={`nav-links nav-links-with-mega${isMegaOpen ? ' mega-open' : ''}`}
             onMouseEnter={openMega}
             onMouseLeave={closeMegaDelayed}
           >
+            {/* 逐个渲染导航链接；首页('/')不触发 Mega 菜单 */}
             {NAV_HREFS.map((link) => (
               <Link
                 key={link.href}
@@ -153,6 +195,10 @@ export default function Nav({ active }: { active?: string }) {
               </Link>
             ))}
 
+            {/*
+              Mega 下拉面板：三列布局（产品 / 开发者 / 关于），
+              鼠标进入面板时保持打开，离开后延迟关闭
+            */}
             <div
               className="mega-panel"
               onMouseEnter={openMega}
@@ -196,6 +242,7 @@ export default function Nav({ active }: { active?: string }) {
             </div>
           </div>
 
+          {/* 右侧功能区：语言切换 + 登录/联系按钮 + 汉堡菜单（仅移动端可见） */}
           <div className="nav-cta">
             <LanguageSwitcher />
             <a href="#" className="btn btn-ghost btn-sm">{t('common.btn.login')}</a>
@@ -215,6 +262,11 @@ export default function Nav({ active }: { active?: string }) {
         </div>
       </nav>
 
+      {/*
+        ====== 移动端侧边抽屉 ======
+        在 ≤1100px 时可见，由汉堡按钮控制开关。
+        内部结构按"首页 / 产品 / 开发者 / 关于"分组展示子链接。
+      */}
       <div id="mobile-drawer" className={`mobile-drawer${isDrawerOpen ? ' open' : ''}`}>
         <div className="mobile-drawer-section">
           <Link href="/" className="mobile-drawer-item" onClick={closeDrawer}>
@@ -260,6 +312,7 @@ export default function Nav({ active }: { active?: string }) {
           ))}
         </div>
 
+        {/* 抽屉底部的 CTA 按钮 */}
         <div className="mobile-drawer-cta">
           <a href="#" className="btn btn-ghost" onClick={closeDrawer}>{t('common.btn.login')}</a>
           <Link href="/about#contact" className="btn btn-primary" onClick={closeDrawer}>{t('common.btn.contact')}</Link>

@@ -1,10 +1,23 @@
-﻿// ============================================================
-// 产品页（Products）—— 4 大板块
-//   ① 数据集（#datasets）  ② 工具链（#toolchain）
-//   ③ 采集设备（#devices） ④ 生态支持（#ecosystem）
-// 数据来源：lib/data.ts → devices；静态数组在本文件定义
-// 文案：i18n.ts products.* 键
-// ============================================================
+﻿/**
+ * @file 产品页（Products Page）—— 4 大板块
+ *
+ * 页面结构：
+ *   ① 数据集（#datasets）   —— 4 个应用场景封面卡片，跳转至 /marketplace
+ *   ② 工具链（#toolchain）  —— 特性 Pill + 部署方式（一体机/云算力）+ 三步流水线 + Demo CTA
+ *   ③ 采集设备（#devices）  —— 从 lib/data.ts 读取设备列表渲染卡片网格
+ *   ④ 生态支持（#ecosystem）—— 支持的机器人本体分类卡片（含品牌标签）
+ *
+ * 数据来源：
+ *   - 设备列表：lib/data.ts → devices 数组
+ *   - 场景 / 工具链 / 生态分类：本文件静态常量
+ *
+ * 文案：i18n.ts → products.* / home.ds.* / common.* 键
+ *
+ * 注意：
+ *   - 价格区域（.device-card-price）已由全局 CSS 隐藏（参见 CLAUDE.md 铁律）
+ *   - 场景封面图位于 /public/assets/scenes/ 下
+ *   - 生态卡片背景使用完整 CSS background shorthand（图片 + 兜底色）
+ */
 'use client';
 import React from 'react';
 import Link from 'next/link';
@@ -14,7 +27,9 @@ import Footer from '@/components/Footer';
 import { devices } from '@/lib/data';
 
 // ── ① 数据集：场景封面图 ──────────────────────────────────────
-// img 为相对于 /public 的路径；key 对应 i18n products.p1.{key}.*
+// 每项代表一个应用场景（物流/工业/家庭/医疗），
+// img 为 /public 下的相对路径，key 用于拼接 i18n 键 products.p1.{key}.*
+// labelKey 复用首页的场景标签翻译键，避免重复定义
 const SCENES = [
   { key: 's1', labelKey: 'home.ds.s1.label', img: 'assets/scenes/logistics.jpg' },
   { key: 's2', labelKey: 'home.ds.s2.label', img: 'assets/scenes/industry.jpg'  },
@@ -22,20 +37,24 @@ const SCENES = [
   { key: 's4', labelKey: 'home.ds.s4.label', img: 'assets/scenes/medical.jpg'   },
 ];
 
-// ── ② 工具链：三个特性 Pill 的背景/边框颜色 ────────────────────
+// ── ② 工具链：三个特性 Pill 的样式配置 ───────────────────────
+// bg / border 使用低透明度色值实现"雾面玻璃"视觉效果，
+// 三者分别对应：采集接入（青）/ 数据管理（粉）/ 持续交付（绿）
 const PILL_STYLES = [
   { bg: 'rgba(8,145,178,0.08)',  border: 'rgba(8,145,178,0.22)',  icon: '🏢' },
   { bg: 'rgba(236,72,153,0.08)', border: 'rgba(236,72,153,0.22)', icon: '📦' },
   { bg: 'rgba(74,222,128,0.06)', border: 'rgba(74,222,128,0.2)',  icon: '🔄' },
 ];
 
-// 工具链三步走流程的 i18n key（products.p2.flow.{step}.*）
+// 工具链三步走流程的 i18n 键后缀（products.p2.flow.{step}.*）
+// 分别对应：采集接入 → 加工提质 → 训练交付
 const FLOW_STEPS = ['s1', 's2', 's3'] as const;
 
 // ── ④ 生态支持：支持的机器人本体分类 ──────────────────────────
-// bg：CSS background shorthand（含图片路径 + 颜色兜底）
-// overlay：渐变遮罩，从透明→半透明，用于卡片文字可读性
-// brands：该分类代表品牌列表（渲染为 tag 标签）
+// 每项表示一类机器人形态（轻量臂 / 工业臂 / 移动底盘 / 人形）
+// bg：CSS background shorthand（含图片路径 + 兜底色），图片位于 /public/assets/supports/
+// overlay：渐变遮罩从透明→半透明，确保底部品牌标签文字可读
+// brands：该分类代表品牌列表，渲染为小标签 tag
 const ECO_CATS = [
   { key: 'cat1', bg: '#141414 url(assets/supports/arm.png) center/contain no-repeat',     overlay: 'linear-gradient(180deg,rgba(15,37,64,0) 60%,rgba(15,37,64,0.55) 100%)', brands: ['ARX','AgileX 松灵','SO-101','ALOHA','GELLO','Koch'] },
   { key: 'cat2', bg: '#ffffff url(assets/supports/ur.png) center/contain no-repeat',      overlay: 'linear-gradient(180deg,rgba(15,37,64,0) 60%,rgba(15,37,64,0.45) 100%)', brands: ['UR','Franka Panda','Sawyer','ABB GoFa','KUKA iiwa'] },
@@ -49,7 +68,7 @@ export default function ProductsPage() {
     <>
       <Nav active="/products" />
       <main>
-        {/* 页头：标题 + 描述 + 锚点快速跳转 */}
+        {/* 页头：标题 + 描述 + 锚点快速跳转按钮（可一键定位到各板块） */}
         <header className="page-head">
           <h1>{t('products.head.h1')}</h1>
           <p>{t('products.head.desc')}</p>

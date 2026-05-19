@@ -1,9 +1,23 @@
-// ============================================================
-// 任务大厅页（Tasks）
-// 功能：任务类型概览卡片 + 类型/关键词筛选 + 任务卡片列表
-// 数据来源：lib/data.ts → tasks 数组
-// 文案：i18n.ts tasks.* / common.* 键
-// ============================================================
+/**
+ * @file 任务大厅页（Tasks Page）
+ *
+ * 职责：
+ *   展示所有可接单的数据采集/标注/审核任务，支持类型筛选 + 关键词搜索
+ *
+ * 页面结构：
+ *   - 顶部 4 张类型概览卡片（点击可切换筛选）
+ *   - 筛选栏（类型 chip + 搜索框）
+ *   - 任务卡片列表（含进度条、信息网格、难度标签）
+ *   - 底部 CTA（发布任务 / 接入平台）
+ *
+ * 数据来源：lib/data.ts → tasks 数组
+ * 文案：i18n.ts → tasks.* / common.* 键
+ *
+ * 注意：
+ *   - 任务类型概览卡片同时充当快捷筛选器（点击 toggle 选中/全部）
+ *   - 悬赏金额区域（.task-card-reward）由全局 CSS 隐藏（参见 CLAUDE.md 铁律）
+ *   - 难度等级样式通过 .level-tag + 难度类名实现颜色区分
+ */
 'use client';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,21 +25,25 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { tasks } from '@/lib/data';
 
-// 任务类型 → 展示图标映射
+// ── 常量配置 ──────────────────────────────────────────────────
+// 任务类型 → 展示图标映射（用于类型概览卡片和筛选 chip）
 const TYPE_ICONS: Record<string, string> = { collect:'🎯', verify:'✅', label:'🏷️', custom:'💎' };
-// 任务难度（中文）→ i18n key（common.level.*）
+// 任务难度（中文值）→ i18n 键后缀（common.level.{value}）
+// 用于将数据中的中文难度等级翻译为双语显示
 const LEVEL_MAP: Record<string, string> = { '入门':'entry','中级':'mid','高级':'high','大单':'big' };
-// 所有任务类型（与 TYPE_ICONS 键对应）
+// 全部任务类型 key（与 TYPE_ICONS 键一致，决定渲染顺序）
 const TYPE_KEYS = ['collect','verify','label','custom'] as const;
 
 export default function TasksPage() {
   const { t } = useTranslation();
-  // 当前类型筛选（'全部' 或任务类型 key）
+  // ── 筛选状态 ──────────────────────────────────────────────
+  // 当前类型筛选（'全部' 或某个任务类型 key，如 'collect'）
   const [typeFilter, setTypeFilter] = useState<string>('全部');
-  // 关键词搜索（匹配标题/ID）
+  // 关键词搜索（同时匹配任务标题和 ID，不区分大小写）
   const [search, setSearch] = useState('');
 
-  // 过滤逻辑：先按类型，再按搜索关键词（不区分大小写）
+  // ── 过滤逻辑 ──────────────────────────────────────────────
+  // 先按类型筛选，再按搜索关键词过滤（两层条件串联）
   const filtered = tasks.filter(task => {
     if (typeFilter !== '全部' && task.type !== typeFilter) return false;
     if (search) {
@@ -35,7 +53,8 @@ export default function TasksPage() {
     return true;
   });
 
-  // 计算任务完成百分比（上限 100%，target=0 时返回 0 防止除零）
+  // 计算任务完成百分比（上限 100%，target=0 时返回 0 防止除零错误）
+  // 注意：参数名 t 遮蔽了外层 useTranslation 的 t，但此处仅在 JSX 中作为回调使用
   const pct = (t: typeof tasks[0]) => t.target > 0 ? Math.min(100, Math.round(t.progress / t.target * 100)) : 0;
 
   return (
@@ -50,7 +69,8 @@ export default function TasksPage() {
         <section className="section section-bg-mid">
           <div className="section-inner">
 
-            {/* ── 任务类型总览卡片（点击可筛选）────────── */}
+            {/* ── 任务类型总览卡片（同时充当快捷筛选器）──── */}
+            {/* 点击已选中的类型会重置为"全部"（toggle 行为） */}
             <div className="grid grid-4" style={{ marginBottom: 32 }}>
               {TYPE_KEYS.map(k => (
                 <button
