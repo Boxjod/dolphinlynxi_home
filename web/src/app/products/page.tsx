@@ -22,10 +22,10 @@ const PILL_STYLES = [
 const FLOW_STEPS = ['s1', 's2', 's3'] as const;
 
 const ECO_CATS = [
-  { key: 'cat1', img: 'assets/research/exo/so101-leader-follower.jpg', brands: ['ARX','AgileX 松灵','SO-101','ALOHA','GELLO','Koch'] },
-  { key: 'cat2', img: 'assets/scenes/industry.jpg',  brands: ['UR','Franka Panda','Sawyer','ABB GoFa','KUKA iiwa'] },
-  { key: 'cat3', img: 'assets/research/exo/mobile-aloha.png', brands: ['AgileX Scout','AgileX Bunker','大象 myAGV','Fetch','UR + 升降柱'] },
-  { key: 'cat4', img: 'assets/scenes/humanoid.jpg', brands: ['Fourier GR','HOPE-JR','Unitree G1','智元远征','优必选 Walker'] },
+  { key: 'cat1', bg: '#141414 url(assets/supports/arm.png) center/contain no-repeat',     overlay: 'linear-gradient(180deg,rgba(15,37,64,0) 60%,rgba(15,37,64,0.55) 100%)', brands: ['ARX','AgileX 松灵','SO-101','ALOHA','GELLO','Koch'] },
+  { key: 'cat2', bg: '#ffffff url(assets/supports/ur.png) center/contain no-repeat',      overlay: 'linear-gradient(180deg,rgba(15,37,64,0) 60%,rgba(15,37,64,0.45) 100%)', brands: ['UR','Franka Panda','Sawyer','ABB GoFa','KUKA iiwa'] },
+  { key: 'cat3', bg: '#ffffff url(assets/supports/chassis.png) center/contain no-repeat', overlay: 'linear-gradient(180deg,rgba(15,37,64,0) 60%,rgba(15,37,64,0.45) 100%)', brands: ['AgileX Scout','AgileX Bunker','大象 myAGV','Fetch','UR + 升降柱'] },
+  { key: 'cat4', bg: 'url(assets/supports/human.jpg) center/contain no-repeat, linear-gradient(180deg,#e9edf2 0%,#c3cbd4 100%)', overlay: 'linear-gradient(180deg,rgba(15,37,64,0) 60%,rgba(15,37,64,0.45) 100%)', brands: ['Fourier GR','HOPE-JR','Unitree G1','智元远征','优必选 Walker'] },
 ];
 
 export default function ProductsPage() {
@@ -221,8 +221,8 @@ export default function ProductsPage() {
             <div className="grid grid-4">
               {ECO_CATS.map(cat => (
                 <div key={cat.key} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ height: 160, background: `url(${cat.img}) center/cover`, position: 'relative' }}>
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(15,37,64,0.10) 0%,rgba(15,37,64,0.55) 100%)' }} />
+                  <div style={{ height: 160, background: cat.bg, position: 'relative' }}>
+                    <div style={{ position: 'absolute', inset: 0, background: cat.overlay }} />
                   </div>
                   <div style={{ padding: '22px 22px 24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                     <h4 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>{t(`products.p4.${cat.key}.title`)}</h4>

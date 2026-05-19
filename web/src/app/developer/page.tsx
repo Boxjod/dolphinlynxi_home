@@ -85,19 +85,6 @@ export default function DeveloperPage() {
               <p className="section-desc">{t('dev.s4.desc')}</p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-4" style={{ marginBottom: 40 }}>
-              {(['k1','k2','k3','k4'] as const).map((k, i) => {
-                const vals = ['12','100M+','50+','MIT/CC0'];
-                return (
-                  <div key={k} className="card" style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 28, fontWeight: 900, color: 'var(--wave-cyan)', marginBottom: 6 }}>{vals[i]}</div>
-                    <div style={{ fontSize: 13, color: 'var(--text-secondary)' }}>{t(`dev.s4.${k}.label`)}</div>
-                  </div>
-                );
-              })}
-            </div>
-
             <div className="grid grid-3">
               {ossDatasets.map(d => (
                 <div key={d.id} className="card">
@@ -113,8 +100,21 @@ export default function DeveloperPage() {
               ))}
             </div>
 
-            <div style={{ marginTop: 24, padding: '14px 20px', background: 'var(--ocean-card)', border: '1px solid var(--ocean-line)', borderRadius: 'var(--radius)', textAlign: 'center', color: 'var(--text-secondary)', fontSize: 13 }}>
-              {t('dev.s4.note')}
+            {/* Stats + Note */}
+            <div style={{ marginTop: 48, padding: 36, background: 'var(--ocean-card)', border: '1px solid var(--ocean-line)', borderRadius: 'var(--radius-lg)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1.8fr', gap: 32, textAlign: 'center', alignItems: 'center' }}>
+                {(['k1','k2','k3','k4'] as const).map((k, i) => {
+                  const vals = ['12','10⁹+','22+','Apache + MIT + CC'];
+                  return (
+                    <div key={k}>
+                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, whiteSpace: i === 3 ? 'nowrap' : undefined, background: 'var(--gradient-cta)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>{vals[i]}</div>
+                      <div style={{ color: 'var(--text-dim)', fontSize: 13, marginTop: 4, letterSpacing: 1 }}>{t(`dev.s4.${k}.label`)}</div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div style={{ marginTop: 24, paddingTop: 24, borderTop: '1px solid var(--ocean-line)', textAlign: 'center', color: 'var(--text-secondary)', fontSize: 14, lineHeight: 1.7 }}
+                dangerouslySetInnerHTML={{ __html: t('dev.s4.note') }} />
             </div>
 
             {/* Academy CTA */}

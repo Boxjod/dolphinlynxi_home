@@ -31,9 +31,8 @@ export default function AboutPage() {
 
             <div style={{ background: 'var(--ocean-card)', padding: 48, borderRadius: 'var(--radius-lg)', border: '1px solid var(--ocean-line)' }}>
               {(['p1','p2','p3','p4','p5'] as const).map((p, i) => (
-                <p key={p} style={{ fontSize: 17, lineHeight: 1.9, color: 'var(--text-secondary)', marginBottom: i < 4 ? 20 : 0 }}>
-                  {t(`about.s1.${p}`)}
-                </p>
+                <p key={p} style={{ fontSize: 17, lineHeight: 1.9, color: 'var(--text-secondary)', marginBottom: i < 4 ? 20 : 0 }}
+                  dangerouslySetInnerHTML={{ __html: t(`about.s1.${p}`) }} />
               ))}
             </div>
 
