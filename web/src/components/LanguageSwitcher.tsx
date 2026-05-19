@@ -26,8 +26,8 @@ export default function LanguageSwitcher({ className }: { className?: string }) 
       className={className ?? 'lang-toggle'}
     >
       {isZh
-        ? <><span className="lang-flag">🇬🇧</span><span className="lang-label">EN</span></>
-        : <><span className="lang-flag">🇨🇳</span><span className="lang-label">中文</span></>}
+        ? <><span className="lang-flag">🌐</span><span className="lang-label">EN</span></>
+        : <><span className="lang-flag">🌐</span><span className="lang-label">中文</span></>}
     </button>
   );
 }

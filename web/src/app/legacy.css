@@ -96,7 +96,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ============ Mega Panel (统一下拉，三列合并为一块) ============ */
-.nav-arrow { font-size: 9px; opacity: 0.6; transition: transform 0.25s, opacity 0.25s; margin-top: 1px; }
+.nav-arrow { font-size: 20px; opacity: 0.6; transition: transform 0.25s, opacity 0.25s; margin-top: 1px; }
 .nav-links-with-mega { position: relative; }
 .nav-links-with-mega.mega-open .has-mega .nav-arrow { transform: rotate(180deg); opacity: 1; }
 

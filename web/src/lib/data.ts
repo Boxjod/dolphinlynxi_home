@@ -271,7 +271,7 @@ export const tasks: Task[] = [
 // ── Devices ───────────────────────────────────────────────────────────────────
 export const devices: Device[] = [
   { id:'DEV-3015', name:'灵汐·轻量级机械臂', icon:'🦾',
-    image:'assets/joycon.png', group:'teleop',
+    image:'assets/joy-arm.jpg', group:'teleop',
     category:'入门级桌面臂', price:1299, status:'现货', hot:true,
     features:['🦾 6 DOF 桌面臂 · 仅 0.8 kg','🕹️ Joy-Con 风格手柄遥操','✅ 已售 1000+ 套'],
     desc:'学生 / 创客入门首选，30 分钟上手开始数采。' },
