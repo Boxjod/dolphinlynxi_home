@@ -12,6 +12,7 @@
 
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { withAssetPath } from '@/lib/site-path';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -24,7 +25,7 @@ export default function Footer() {
           {/* 品牌栏：Logo + 公司名 + 联系方式 */}
           <div>
             <div className="footer-brand">
-              <img src="/assets/logo.png" alt="Dolphin Lynxi" />
+              <img src={withAssetPath('assets/logo.png')} alt="Dolphin Lynxi" />
               <span>{t('nav.brand')}</span>
             </div>
             <div className="footer-tag">

@@ -23,6 +23,7 @@ import { useTranslation } from 'react-i18next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { ossDatasets } from '@/lib/data';
+import { withAssetPath } from '@/lib/site-path';
 
 // ── 平台支持的模型清单 ─────────────────────────────────────────
 // 这些模型名将渲染为标签 tag，并根据名称条件着色（见下方 JSX 逻辑）
@@ -161,7 +162,7 @@ export default function DeveloperPage() {
                 <div key={dataset.id} className="card oss-ds-card">
                   <div className="oss-ds-image">
                     {/* dataset.image 来自 lib/data.ts，路径前加 / 使其相对于 /public */}
-                    <img src={`/${dataset.image}`} alt={dataset.name} loading="lazy" />
+                    <img src={withAssetPath(dataset.image)} alt={dataset.name} loading="lazy" />
                   </div>
                   <div className="oss-ds-body">
                     <div className="oss-ds-org">{dataset.org}</div>

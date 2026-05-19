@@ -16,6 +16,13 @@ import "./globals.css";
 import I18nProvider from "@/components/I18nProvider";
 import PageToc from "@/components/PageToc";
 
+const siteOrigin = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://robot.box2ai.com";
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim() || "";
+const basePath = rawBasePath
+  ? `/${rawBasePath.replace(/^\/+|\/+$/g, "")}`
+  : "";
+const metadataBase = new URL(`${siteOrigin}${basePath || "/"}`);
+
 // ── 字体配置 ──────────────────────────────────────────────────
 // 使用 Next.js Font Optimization 自动子集化 + 内联关键 CSS，
 // 变量名会注入 <html> className 供全局样式引用。
@@ -33,7 +40,7 @@ const geistMono = Geist_Mono({
 // metadataBase 用于自动拼接 openGraph.url 等相对路径；
 // 注意品牌定位必须为"具身智能数据资产的运营商"（参见 CLAUDE.md 铁律）。
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.dolphinlynxi.com"),
+  metadataBase,
   title: "海豚灵汐 · 数据如潮，灵汐而至 | 具身智能数据资产的运营商",
   description:
     "海豚灵汐 · 数据如潮，灵汐而至。Scaling Law 时代的具身智能数据资产的运营商。",
@@ -41,7 +48,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    url: "https://www.dolphinlynxi.com",
+    url: "/",
     siteName: "海豚灵汐",
     title: "海豚灵汐 · 数据如潮，灵汐而至",
     description:

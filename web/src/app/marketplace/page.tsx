@@ -23,6 +23,7 @@ import { useTranslation } from 'react-i18next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { datasets } from '@/lib/data';
+import { withAssetPath } from '@/lib/site-path';
 
 // ── 筛选选项常量 ────────────────────────────────────────────────
 // 以下数组定义了三个筛选维度的全部可选项。
@@ -151,7 +152,7 @@ export default function MarketplacePage() {
                     {!ds.hot && ds.new && <span className="ds-card-badge new">NEW</span>}
                     {/* 封面：有 image 字段则显示真实图，否则用场景色块 */}
                     {ds.image ? (
-                      <div className="ds-card-cover ds-card-cover-img" style={{ backgroundImage: `url(${ds.image})` }}>
+                      <div className="ds-card-cover ds-card-cover-img" style={{ backgroundImage: `url(${withAssetPath(ds.image)})` }}>
                         <span className="ds-card-cover-scene">{ds.scene}</span>
                       </div>
                     ) : (

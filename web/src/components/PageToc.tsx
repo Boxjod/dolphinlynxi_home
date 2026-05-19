@@ -16,6 +16,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
+import { normalizeAppPath } from '@/lib/site-path';
 
 /** 目录条目的数据结构 */
 type TocItem = {
@@ -30,16 +31,6 @@ const TOC_PATH_WHITELIST = new Set(['/', '/products', '/developer', '/about']);
  * 去除路径中的 locale 前缀（/zh 或 /en），
  * 统一为小写以便与白名单做精确匹配。
  */
-function normalizePath(pathname: string): string {
-  const lowered = pathname.toLowerCase();
-  const localeMatch = lowered.match(/^\/(zh|en)(\/|$)/);
-  if (!localeMatch) {
-    return lowered;
-  }
-  const stripped = lowered.replace(/^\/(zh|en)/, '');
-  return stripped || '/';
-}
-
 export default function PageToc() {
   const pathname = usePathname();
   const { i18n } = useTranslation();
@@ -58,7 +49,7 @@ export default function PageToc() {
 
   /** 判断当前路径是否在白名单中 */
   const isWhitelistedPath = useMemo(() => {
-    const normalizedPath = normalizePath(pathname || '/');
+    const normalizedPath = normalizeAppPath(pathname || '/');
     return TOC_PATH_WHITELIST.has(normalizedPath);
   }, [pathname]);
 

@@ -9,8 +9,14 @@
  */
 import type { NextConfig } from "next";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim()
+  ? `/${process.env.NEXT_PUBLIC_BASE_PATH.trim().replace(/^\/+|\/+$/g, '')}`
+  : '';
+
 const nextConfig: NextConfig = {
   output: 'export',           // 静态导出，部署到 robot.box2ai.com/datasets/
+  basePath: basePath || undefined,
+  assetPrefix: basePath || undefined,
   reactStrictMode: true,
   devIndicators: false,
   images: { unoptimized: true }, // 静态导出模式下必须禁用图片优化

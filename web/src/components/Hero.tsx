@@ -14,6 +14,7 @@
 
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { withAssetPath } from '@/lib/site-path';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ export default function Hero() {
       {/* 背景波浪动画层（纯 CSS 实现） */}
       <div className="hero-waves" />
       <div className="hero-inner">
-        <img src="/assets/logo.png" className="hero-logo" alt="Dolphin Lynxi logo" />
+        <img src={withAssetPath('assets/logo.png')} className="hero-logo" alt="Dolphin Lynxi logo" />
         <h1 className="hero-title">{t('home.hero.title')}</h1>
         <p className="hero-sub">{t('home.hero.sub')}</p>
         {/* CTA 按钮组：主按钮（实心）+ 次按钮（文字链接样式） */}

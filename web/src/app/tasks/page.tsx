@@ -24,6 +24,7 @@ import { useTranslation } from 'react-i18next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { tasks } from '@/lib/data';
+import { withBasePath } from '@/lib/site-path';
 
 // ── 常量配置 ──────────────────────────────────────────────────
 // 任务类型 → 展示图标映射（用于类型概览卡片和筛选 chip）
@@ -161,8 +162,8 @@ export default function TasksPage() {
               <h3>{t('tasks.cta.title')}</h3>
               <p>{t('tasks.cta.desc')}</p>
               <div className="cta-banner-btns">
-                <a href="/about#contact" className="btn btn-primary btn-lg">{t('tasks.cta.b1')}</a>
-                <a href="/developer#platform" className="link-more">{t('tasks.cta.b2')}</a>
+                <a href={withBasePath('/about#contact')} className="btn btn-primary btn-lg">{t('tasks.cta.b1')}</a>
+                <a href={withBasePath('/developer#platform')} className="link-more">{t('tasks.cta.b2')}</a>
               </div>
             </div>
           </div>

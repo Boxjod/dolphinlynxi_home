@@ -16,6 +16,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
+import { withAssetPath } from '@/lib/site-path';
 
 /** 顶部导航的路由配置，key 对应 i18n 翻译键 */
 const NAV_HREFS = [
@@ -164,7 +165,7 @@ export default function Nav({ active }: { active?: string }) {
         <div className="nav-inner">
           {/* 品牌 Logo + 文字，点击回首页 */}
           <Link href="/" className="nav-brand" onClick={closeDrawer}>
-            <img src="/assets/logo.png" alt="Dolphin Lynxi" />
+            <img src={withAssetPath('assets/logo.png')} alt="Dolphin Lynxi" />
             <div className="nav-brand-text">
               <span>{t('nav.brand')}</span>
               <div className="nav-brand-sub">{t('nav.brandSub')}</div>

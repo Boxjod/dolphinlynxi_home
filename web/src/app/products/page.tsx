@@ -25,6 +25,7 @@ import { useTranslation } from 'react-i18next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { devices } from '@/lib/data';
+import { withAssetPath } from '@/lib/site-path';
 
 // ── ① 数据集：场景封面图 ──────────────────────────────────────
 // 每项代表一个应用场景（物流/工业/家庭/医疗），
@@ -92,7 +93,7 @@ export default function ProductsPage() {
             <div className="grid grid-4" style={{ marginBottom: 64 }}>
               {SCENES.map((s) => (
                 <div key={s.key} className="card" style={{ padding: 0, overflow: 'hidden' }}>
-                  <div style={{ height: 160, background: `url(${s.img}) center/cover`, position: 'relative' }}>
+                  <div style={{ height: 160, background: `url(${withAssetPath(s.img)}) center/cover`, position: 'relative' }}>
                     {/* 渐变遮罩保证底部文字可读 */}
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.75) 100%)' }} />
                     <div style={{ position: 'absolute', bottom: 14, left: 18, color: 'white', zIndex: 2 }}>
@@ -139,7 +140,7 @@ export default function ProductsPage() {
               {/* 本地一体机卡片 */}
               <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ background: '#ffffff', borderBottom: '1px solid var(--ocean-line)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, height: 200 }}>
-                  <img src="assets/server.png" alt="Lynxi appliance" style={{ maxHeight: 170, maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 8px 20px rgba(15,37,64,0.12))' }} />
+                  <img src={withAssetPath('assets/server.png')} alt="Lynxi appliance" style={{ maxHeight: 170, maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 8px 20px rgba(15,37,64,0.12))' }} />
                 </div>
                 <div style={{ padding: '24px 28px 28px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                   <div style={{ fontSize: 11, color: 'var(--wave-cyan)', letterSpacing: 2, marginBottom: 6, fontWeight: 700 }}>{t('products.p2.banner.eyebrow')}</div>
@@ -156,7 +157,7 @@ export default function ProductsPage() {
 
               {/* 云算力卡片 */}
               <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ background: 'url(assets/devices/gpu-cloud.jpg) center/cover', height: 200, position: 'relative' }}>
+                <div style={{ background: `url(${withAssetPath('assets/devices/gpu-cloud.jpg')}) center/cover`, height: 200, position: 'relative' }}>
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(44,127,191,0.55) 0%,rgba(8,145,178,0.85) 100%)' }} />
                   <div style={{ position: 'absolute', bottom: 18, left: 20, color: 'white', zIndex: 2 }}>
                     <div style={{ fontSize: 11, letterSpacing: 2, opacity: 0.85, fontWeight: 600 }}>{t('products.p2.cloud.eyebrow')}</div>
@@ -228,7 +229,7 @@ export default function ProductsPage() {
                   {dev.new && <span className="ds-card-badge new">NEW</span>}
                   <div className="device-card-image">
                     {/* lazy 加载；图片加载失败则隐藏 img 元素 */}
-                    <img src={dev.image} alt={dev.name} loading="lazy" onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                    <img src={withAssetPath(dev.image)} alt={dev.name} loading="lazy" onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
                   </div>
                   <div className="device-card-cat">{dev.category}</div>
                   <div className="device-card-name">{dev.name}</div>
@@ -269,7 +270,7 @@ export default function ProductsPage() {
                 <div key={cat.key} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                   {/* cat.bg = 完整 CSS background shorthand（图 + 兜底色）*/}
                   {/* cat.overlay = 底部渐变遮罩提升文字层次感 */}
-                  <div style={{ height: 160, background: cat.bg, position: 'relative' }}>
+                  <div style={{ height: 160, background: cat.bg.replace(/url\(([^)]+)\)/g, (_match, assetPath) => `url(${withAssetPath(assetPath)})`), position: 'relative' }}>
                     <div style={{ position: 'absolute', inset: 0, background: cat.overlay }} />
                   </div>
                   <div style={{ padding: '22px 22px 24px', display: 'flex', flexDirection: 'column', flex: 1 }}>

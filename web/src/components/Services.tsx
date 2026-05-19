@@ -16,6 +16,7 @@
 
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { withAssetPath } from '@/lib/site-path';
 
 /**
  * 四项核心服务的静态配置。
@@ -24,10 +25,10 @@ import { useTranslation } from 'react-i18next';
  * href: 点击后跳转的目标路由
  */
 const SERVICES = [
-  { img: '/assets/services/service-datasets.jpg',  eyebrow: 'home.svc.s1.eyebrow', label: 'home.svc.s1.label', desc: 'home.svc.s1.desc', tag: 'home.svc.s1.tag', href: '/marketplace' },
-  { img: '/assets/services/service-toolchain.jpg', eyebrow: 'home.svc.s2.eyebrow', label: 'home.svc.s2.label', desc: 'home.svc.s2.desc', tag: 'home.svc.s2.tag', href: '/products#toolchain' },
-  { img: '/assets/services/service-platform.jpg',  eyebrow: 'home.svc.s3.eyebrow', label: 'home.svc.s3.label', desc: 'home.svc.s3.desc', tag: 'home.svc.s3.tag', href: '/products#devices' },
-  { img: '/assets/services/service-developer.jpg', eyebrow: 'home.svc.s4.eyebrow', label: 'home.svc.s4.label', desc: 'home.svc.s4.desc', tag: 'home.svc.s4.tag', href: '/developer' },
+  { img: 'assets/services/service-datasets.jpg',  eyebrow: 'home.svc.s1.eyebrow', label: 'home.svc.s1.label', desc: 'home.svc.s1.desc', tag: 'home.svc.s1.tag', href: '/marketplace' },
+  { img: 'assets/services/service-toolchain.jpg', eyebrow: 'home.svc.s2.eyebrow', label: 'home.svc.s2.label', desc: 'home.svc.s2.desc', tag: 'home.svc.s2.tag', href: '/products#toolchain' },
+  { img: 'assets/services/service-platform.jpg',  eyebrow: 'home.svc.s3.eyebrow', label: 'home.svc.s3.label', desc: 'home.svc.s3.desc', tag: 'home.svc.s3.tag', href: '/products#devices' },
+  { img: 'assets/services/service-developer.jpg', eyebrow: 'home.svc.s4.eyebrow', label: 'home.svc.s4.label', desc: 'home.svc.s4.desc', tag: 'home.svc.s4.tag', href: '/developer' },
 ];
 
 export default function Services() {
@@ -45,7 +46,7 @@ export default function Services() {
           {SERVICES.map((svc, i) => (
             <Link key={i} href={svc.href} className="card" style={{ padding: 0, overflow: 'hidden', textDecoration: 'none', color: 'inherit' }}>
               {/* 卡片顶部：背景图 + 渐变遮罩 + 服务名称叠加 */}
-              <div style={{ height: 160, background: `url(${svc.img}) center/cover`, position: 'relative' }}>
+              <div style={{ height: 160, background: `url(${withAssetPath(svc.img)}) center/cover`, position: 'relative' }}>
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(15,37,64,0.15) 0%,rgba(15,37,64,0.78) 100%)' }} />
                 <div style={{ position: 'absolute', bottom: 14, left: 18, color: 'white', zIndex: 2 }}>
                   <div style={{ fontSize: 11, letterSpacing: 2, opacity: 0.85 }}>{t(svc.eyebrow)}</div>
