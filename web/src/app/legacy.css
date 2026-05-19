@@ -1444,6 +1444,7 @@ body.drawer-open { overflow: hidden; }
   .dash-kpi-card { padding: 14px; }
   .dash-kpi-num { font-size: 22px; }
   .dash-table th, .dash-table td { font-size: 12px; }
+  .dash-two-col { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 420px) {
@@ -1471,6 +1472,8 @@ body.drawer-open { overflow: hidden; }
     gap: 20px !important;
   }
   /* dashboard.html: 2 tables side-by-side → stack */
+  .dash-two-col,
+  div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 16px"],
   div[style*="grid-template-columns:1fr 1fr"][style*="gap:16px"] {
     grid-template-columns: 1fr !important;
   }
@@ -1522,9 +1525,59 @@ body.drawer-open { overflow: hidden; }
   div[style*="font-size:24px"][style*="letter-spacing:2px"] {
     font-size: 20px !important;
   }
-  /* dashboard.html: 让 dash-section 允许横向滚动；表格设 min-width 避免列挤死 */
-  .dash-section { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .dash-table { min-width: 460px; }
+  /* dashboard.html: iPhone 小屏紧凑化，避免表格挤压错位 */
+  .dash-section { overflow-x: hidden; }
+  .dash-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .dash-table th,
+  .dash-table td {
+    padding: 10px 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .dash-table .mono { font-size: 11px; }
+  .dash-prog { width: 56px !important; }
+
+  /* 设备表：小屏隐藏“位置”列 */
+  .dash-table-dev th:nth-child(2),
+  .dash-table-dev td:nth-child(2) {
+    display: none;
+  }
+
+  /* 任务表：保留预算列，压缩状态列宽度 */
+  .dash-table-task th:nth-child(1),
+  .dash-table-task td:nth-child(1) {
+    width: 80px;
+    max-width: 80px;
+  }
+  .dash-table-task th:nth-child(3),
+  .dash-table-task td:nth-child(3) {
+    width: 50px;
+    max-width: 64px;
+  }
+  .dash-table-task th:nth-child(4),
+  .dash-table-task td:nth-child(4) {
+    width: 50px;
+    max-width: 56px;
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .dash-table-task td:nth-child(4) .dot {
+    margin-right: 3px;
+  }
+
+  /* 订单表：小屏隐藏“描述/时间”列 */
+  .dash-table-order th:nth-child(3),
+  .dash-table-order td:nth-child(3),
+  .dash-table-order th:nth-child(5),
+  .dash-table-order td:nth-child(5) {
+    display: none;
+  }
   /* developer.html: 数据集统计大数字 36px 在 390px 太挤 */
   div[style*="repeat(4,1fr)"] div[style*="font-size:36px"] {
     font-size: 28px !important;

@@ -27,6 +27,7 @@ out/
 
 # Next.js 自动生成的类型文件（dev/build 切换会自动改，不需要追踪）
 web/next-env.d.ts
+*.tsbuildinfo
 
 # 日志
 *.log

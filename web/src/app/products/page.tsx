@@ -184,7 +184,7 @@ export default function ProductsPage() {
             {/* 数据流水线三步走：采集接入 → 加工提质 → 训练交付 */}
             <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>{t('products.p2.arch.title')}</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: 14, marginBottom: 28 }}>{t('products.p2.arch.desc')}</p>
-            {/* flow-wrap / flow-step CSS 类见 style.css ── 移动端自动折叠为单列 */}
+            {/* flow-wrap / flow-step CSS 类见 legacy.css ── 移动端自动折叠为单列 */}
             <div className="flow-wrap">
               {FLOW_STEPS.map((step, i) => (
                 <React.Fragment key={step}>

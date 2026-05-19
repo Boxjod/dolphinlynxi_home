@@ -145,14 +145,14 @@ export default function DashboardPage() {
               </div>
 
               {/* ── 设备表 + 任务表（并排两列）───── */}
-              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
+              <div className="dash-two-col" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
                 {/* 设备 TOP 10 */}
                 <div className="dash-section">
                   <div className="dash-section-title">
                     <span>{t('dash.dev.title')}</span>
                     <a href="#" style={{ fontSize:12, fontWeight:400, color:'var(--wave-cyan)' }}>{t('dash.dev.viewAll')}</a>
                   </div>
-                  <table className="dash-table">
+                  <table className="dash-table dash-table-dev">
                     <thead>
                       <tr>
                         <th>{t('dash.dev.col.id')}</th>
@@ -180,7 +180,7 @@ export default function DashboardPage() {
                     <span>{t('dash.task.title')}</span>
                     <a href="#" style={{ fontSize:12, fontWeight:400, color:'var(--wave-cyan)' }}>{t('dash.task.new')}</a>
                   </div>
-                  <table className="dash-table">
+                  <table className="dash-table dash-table-task">
                     <thead>
                       <tr>
                         <th>{t('dash.task.col.task')}</th>
@@ -194,7 +194,7 @@ export default function DashboardPage() {
                         <tr key={task.name.zh}>
                           <td>{isZh ? task.name.zh : task.name.en}</td>
                           <td>
-                            <div style={{ height:5, background:'var(--ocean-deep)', borderRadius:3, width:80, display:'inline-block', overflow:'hidden' }}>
+                            <div className="dash-prog" style={{ height:5, background:'var(--ocean-deep)', borderRadius:3, width:80, display:'inline-block', overflow:'hidden' }}>
                               <div style={{ height:'100%', background:'var(--gradient-cta)', width:`${task.prog}%` }} />
                             </div>
                             <span className="mono" style={{ marginLeft:6 }}>{task.prog}%</span>
@@ -214,7 +214,7 @@ export default function DashboardPage() {
                   <span>{t('dash.ord.title')}</span>
                   <a href="#" style={{ fontSize:12, fontWeight:400, color:'var(--wave-cyan)' }}>{t('dash.ord.export')}</a>
                 </div>
-                <table className="dash-table">
+                  <table className="dash-table dash-table-order">
                   <thead>
                     <tr>
                       <th>{t('dash.ord.col.id')}</th>
