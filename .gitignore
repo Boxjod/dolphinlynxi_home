@@ -21,6 +21,7 @@ node_modules/
 dist/
 build/
 .cache/
+out/
 
 # 日志
 *.log
