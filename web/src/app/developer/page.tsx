@@ -188,28 +188,29 @@ export default function DeveloperPage() {
 
             {/* 社区统计指标面板：数据集数量 / 总帧数 / 任务类型 / 开源协议 */}
             {/* 数字使用渐变背景裁剪文字（background-clip: text）实现彩色效果 */}
-            <div style={{ marginTop: 48, padding: 36, background: 'var(--ocean-card)', border: '1px solid var(--ocean-line)', borderRadius: 'var(--radius-lg)' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1.8fr', gap: 32, textAlign: 'center', alignItems: 'center' }}>
+            <div className="dev-oss-stats-panel" style={{ marginTop: 48, padding: 36, background: 'var(--ocean-card)', border: '1px solid var(--ocean-line)', borderRadius: 'var(--radius-lg)' }}>
+              <div className="dev-oss-stats-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1.8fr', gap: 32, textAlign: 'center', alignItems: 'center' }}>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, background: 'var(--gradient-cta)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>12</div>
+                  <div className="dev-oss-stats-value" style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, background: 'var(--gradient-cta)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>12</div>
                   <div style={{ color: 'var(--text-dim)', fontSize: 13, marginTop: 4, letterSpacing: 1 }}>{t('dev.s4.k1.label')}</div>
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, background: 'var(--gradient-cta)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>10⁹+</div>
+                  <div className="dev-oss-stats-value" style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, background: 'var(--gradient-cta)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>10⁹+</div>
                   <div style={{ color: 'var(--text-dim)', fontSize: 13, marginTop: 4, letterSpacing: 1 }}>{t('dev.s4.k2.label')}</div>
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, background: 'var(--gradient-cta)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>22+</div>
+                  <div className="dev-oss-stats-value" style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, background: 'var(--gradient-cta)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>22+</div>
                   <div style={{ color: 'var(--text-dim)', fontSize: 13, marginTop: 4, letterSpacing: 1 }}>{t('dev.s4.k3.label')}</div>
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, whiteSpace: 'nowrap', background: 'var(--gradient-cta)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>Apache + MIT + CC</div>
+                  <div className="dev-oss-stats-value dev-oss-stats-license" style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, whiteSpace: 'nowrap', background: 'var(--gradient-cta)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>Apache + MIT + CC</div>
                   <div style={{ color: 'var(--text-dim)', fontSize: 13, marginTop: 4, letterSpacing: 1 }}>{t('dev.s4.k4.label')}</div>
                 </div>
               </div>
 
               {/* 底部说明文字，含 HTML 链接标签，须用 dangerouslySetInnerHTML 渲染 */}
               <div
+                className="dev-oss-note"
                 style={{ marginTop: 24, paddingTop: 24, borderTop: '1px solid var(--ocean-line)', textAlign: 'center', color: 'var(--text-secondary)', fontSize: 14, lineHeight: 1.7 }}
                 dangerouslySetInnerHTML={{ __html: t('dev.s4.note') }}
               />
