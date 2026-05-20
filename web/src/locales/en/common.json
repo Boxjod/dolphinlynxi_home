@@ -1,0 +1,32 @@
+{
+  "btn": {
+    "login": "Sign in",
+    "contact": "Enterprise",
+    "contactShort": "Contact us",
+    "viewMore": "Learn more",
+    "viewAll": "View all",
+    "apply": "📨 Apply now",
+    "priceInquiry": "Contact sales"
+  },
+  "badge": { "coming": "COMING SOON" },
+  "learnMore": "Learn more →",
+  "vendor": { "self": "Dolphin in-house", "bigB": "Curated collection", "crowd": "Crowdsourced" },
+  "scene": {
+    "food": "F&B", "home": "Home service", "industry": "Industrial", "logistics": "Logistics",
+    "retail": "Retail chain", "medical": "Medical", "service": "Service chain", "edu": "Education",
+    "eduToy": "Edu toys", "arts": "Arts & creative", "clean": "Cleaning", "precision": "Precision",
+    "fun": "Entertainment", "general": "General"
+  },
+  "arm": { "single": "Single-arm", "dual": "Dual-arm", "all": "All" },
+  "unit": {
+    "episodes": "episodes", "duration": "duration", "frames": "frames",
+    "free": "Free", "published": "Published", "successRate": "success", "latency": "inference latency"
+  },
+  "task": {
+    "collect": "Collect", "verify": "Verify", "label": "Label", "custom": "Custom",
+    "client": "Client: ", "scene": "Scene: ", "device": "Device: ", "deadline": "Deadline: ",
+    "level": "Difficulty: ", "negotiate": "Negotiable", "accept": "Accept task", "submit": "Submit proposal"
+  },
+  "level": { "entry": "Entry", "mid": "Intermediate", "high": "Advanced", "big": "Major" },
+  "eco": { "integrated": "Integrated", "connected": "Connected", "reference": "Reference" }
+}

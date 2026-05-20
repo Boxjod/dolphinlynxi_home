@@ -1,17 +1,49 @@
 /* ============================================================
  * 海豚灵汐 · 全站样式
  * 设计语言：深海科技 + 浪潮意境 + 数据精确感
+ *
+ * 文件结构（按出现顺序）：
+ *   1. CSS 变量（颜色/渐变/阴影/字体/圆角）
+ *   2. 全局重置 & 基础排版
+ *   3. 导航栏（Nav + Mega Panel + 语言切换）
+ *   4. 按钮系统（primary / ghost / pink / 尺寸变体）
+ *   5. Hero 区域
+ *   6. Section 通用布局（标题/描述/左右对齐变体）
+ *   7. 卡片系统（Pillar / Grid / Dataset / Task / Device / Course / OSS 数据集）
+ *   8. 招聘卡片（Job Card）
+ *   9. 首页简化卡片 & 开发者流程图
+ *  10. 价格隐藏（全站不展示价格，CSS 统一隐藏）
+ *  11. 灵汐架构图 & 工具链三步走流程
+ *  12. 兼容硬件生态 & 设备矩阵
+ *  13. 筛选器（Marketplace / Tasks 页）
+ *  14. Dashboard 仪表盘模拟
+ *  15. Modal 弹窗
+ *  16. Footer 页脚
+ *  17. CTA Banner
+ *  18. 子页面头部 & 波浪分隔线
+ *  19. TOC 侧边导航
+ *  20. Hamburger + Mobile Drawer（移动端抽屉）
+ *  21. 响应式断点（@1280 / @1100 / @900 / @680 / @420）
+ *  22. 手机适配补丁（兜底内联 grid 覆盖）
+ *
+ * 响应式断点规则（详见 CLAUDE.md）：
+ *   @1280px — 大屏（TOC 隐藏）
+ *   @1100px — 笔记本（grid-4 → 2, 单列堆叠）
+ *   @900px  — 平板（grid 兜底 + !important）
+ *   @680px  — 手机（单列 + padding 收敛 + 字体缩小）
+ *   @420px  — 小手机（footer 单列）
  * ============================================================ */
 
+/* ── CSS 变量：颜色体系 ──────────────────────────────────────────────────── */
 :root {
   /* 海雾白主题 — 取自 robot.box2ai.com/demo 配色 */
   --ocean-deepest: #f4f7fb;   /* 主背景：海雾色 */
   --ocean-deep: #f8fafc;      /* 备用浅背景 */
-  --ocean-mid: #ffffff;       /* 交替区段：纯白 */
-  --ocean-card: #ffffff;      /* 卡片：纯白 */
-  --ocean-card-2: #f4f7fb;    /* 次级卡片：海雾色 */
+  --ocean-mid: #ffffff;       /* 交替区段：纯白（用于 section 背景交替） */
+  --ocean-card: #ffffff;      /* 卡片背景：纯白 */
+  --ocean-card-2: #f4f7fb;    /* 次级卡片/hover 态背景 */
   --ocean-line: #e4ebf2;      /* 边框：浅灰蓝 */
-  --ocean-line-strong: #c9d5e3;  /* 强边框 */
+  --ocean-line-strong: #c9d5e3;  /* 强边框（按钮/分隔线） */
 
   --wave-blue: #2c7fbf;       /* 主品牌色：海洋蓝 */
   --wave-blue-bright: #4ba3d4;
@@ -42,11 +74,13 @@
   --font-mono: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', 'Fira Code', Menlo, Consolas, 'Microsoft YaHei UI', monospace;
 }
 
+/* ── 全局重置 & 基础排版 ─────────────────────────────────────────────────── */
+/* border-box 统一盒模型，margin/padding 归零 */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;            /* 锚点跳转平滑滚动 */
+  -webkit-text-size-adjust: 100%;     /* 阻止 iOS 横屏自动放大字体 */
 }
 
 body {
@@ -54,24 +88,25 @@ body {
   background: var(--ocean-deepest);
   color: var(--text-primary);
   line-height: 1.65;
-  overflow-x: hidden;
-  font-feature-settings: 'tnum', 'cv11', 'ss01';
+  overflow-x: hidden;                 /* 防止宽元素产生水平滚动条 */
+  font-feature-settings: 'tnum', 'cv11', 'ss01';  /* 等宽数字 + 可选字形集 */
   font-variant-ligatures: common-ligatures;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;       /* macOS 字体抗锯齿 */
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-synthesis: none;
+  text-rendering: optimizeLegibility;        /* 启用字距调整 */
+  font-synthesis: none;                      /* 禁止浏览器伪造粗体/斜体 */
   letter-spacing: 0.005em;
 }
 
-/* 标题专用：略微紧凑 + 强化抗锯齿 */
+/* 标题专用：略微紧凑字距 + 等宽数字 */
 h1, h2, h3, .hero-title, .section-title { letter-spacing: -0.015em; font-feature-settings: 'tnum', 'ss01'; }
 
 a { color: inherit; text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--wave-cyan); }
 img, svg { display: block; max-width: 100%; }
 
-/* ============ Nav ============ */
+/* ── 导航栏（Nav）───────────────────────────────────────────────────────── */
+/* 固定顶部 + 毛玻璃背景 + Mega Panel 下拉 + 语言切换 + 移动端 hamburger */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: rgba(255, 255, 255, 0.85);
@@ -95,8 +130,9 @@ img, svg { display: block; max-width: 100%; }
   background: var(--gradient-cta); border-radius: 2px;
 }
 
-/* ============ Mega Panel (统一下拉，三列合并为一块) ============ */
-.nav-arrow { font-size: 9px; opacity: 0.6; transition: transform 0.25s, opacity 0.25s; margin-top: 1px; }
+/* ── Mega Panel（三列合并下拉面板）────────────────────────────────────── */
+/* hover 时展开，CSS transition 驱动，::after 伪元素做透明桥避免 hover gap 断开 */
+.nav-arrow { font-size: 20px; opacity: 0.6; transition: transform 0.25s, opacity 0.25s; margin-top: 1px; }
 .nav-links-with-mega { position: relative; }
 .nav-links-with-mega.mega-open .has-mega .nav-arrow { transform: rotate(180deg); opacity: 1; }
 
@@ -155,7 +191,8 @@ img, svg { display: block; max-width: 100%; }
 .mega-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
 .nav-cta { display: flex; gap: 12px; align-items: center; }
 
-/* ============ Language Toggle (EN | 中文) ============ */
+/* ── 语言切换按钮（EN | 中文）─────────────────────────────────────────── */
+/* 胶囊形切换按钮，包含国旗 emoji + 文字，≤720px 隐藏国旗仅显示文字 */
 .lang-toggle {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 7px 14px;
@@ -175,7 +212,8 @@ img, svg { display: block; max-width: 100%; }
   .lang-toggle .lang-flag { display: none; }
 }
 
-/* ============ Buttons ============ */
+/* ── 按钮系统 ──────────────────────────────────────────────────────────── */
+/* 4 种变体：primary(渐变蓝) / ghost(白底描边) / pink(渐变粉) / sm+lg 尺寸 */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 22px; border: none; border-radius: 999px;
@@ -191,7 +229,8 @@ img, svg { display: block; max-width: 100%; }
 .btn-sm { padding: 6px 14px; font-size: 12px; }
 .btn-lg { padding: 14px 32px; font-size: 16px; }
 
-/* ============ Hero ============ */
+/* ── Hero 区域（首页大视觉）──────────────────────────────────────────── */
+/* 全屏渐变背景 + 波浪光晕 + 居中标题 + 统计数字 grid；英文标题有专属加宽 */
 .hero {
   position: relative; min-height: 100vh;
   background: var(--gradient-hero);
@@ -251,7 +290,8 @@ html[data-lang="en"] .hero-title {
 }
 .hero-stat-label { font-size: 13px; color: var(--text-dim); margin-top: 8px; letter-spacing: 1px; }
 
-/* ============ Section ============ */
+/* ── Section 通用布局 ──────────────────────────────────────────────────── */
+/* section 基础 padding + 内容居中 + 标题组件（eyebrow/title/desc/左右变体）*/
 .section { padding: 96px 32px; position: relative; }
 .section-bg-mid { background: var(--ocean-mid); }
 .section-bg-deep { background: var(--ocean-deepest); }
@@ -283,7 +323,8 @@ html[data-lang="en"] .hero-title {
 .link-more.subtle { color: var(--text-secondary); }
 .link-more.subtle:hover { color: var(--wave-cyan); }
 
-/* ============ Pillars (业务版图) ============ */
+/* ── Pillars 业务版图卡片 ─────────────────────────────────────────────── */
+/* 2×2 大卡，顶部 3px 渐变色条（蓝 / pink），hover 浮起 + 阴影加深 */
 .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
 .pillar {
   background: var(--ocean-card); border: 1px solid var(--ocean-line);
@@ -305,7 +346,8 @@ html[data-lang="en"] .hero-title {
 .pillar-features li { padding: 8px 0; color: var(--text-secondary); font-size: 14px; padding-left: 20px; position: relative; }
 .pillar-features li::before { content: '▸'; position: absolute; left: 0; color: var(--wave-cyan); }
 
-/* ============ Grid Cards ============ */
+/* ── Grid 网格 & 通用卡片 ─────────────────────────────────────────────── */
+/* grid-2/3/4 列布局 + card 基础样式（白底圆角 + hover 浮起 + feature-icon 徽章）*/
 .grid { display: grid; gap: 24px; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
@@ -336,7 +378,8 @@ html[data-lang="en"] .hero-title {
 .feature-title { font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.2px; }
 .feature-desc { color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
 
-/* Dataset Card */
+/* ── 数据集卡片（Dataset Card）────────────────────────────────────────── */
+/* 带封面图 + 场景配色（13 种渐变）+ 标签 + 统计行 + 底栏，用于 Marketplace 页 */
 .ds-card { cursor: pointer; padding: 0; }
 .ds-card > *:not(.ds-card-cover):not(.ds-card-badge) { padding-left: 24px; padding-right: 24px; }
 .ds-card-cover {
@@ -430,7 +473,8 @@ html[data-lang="en"] .hero-title {
 .ds-card-badge.hot { background: var(--gradient-pink); color: white; }
 .ds-card-badge.new { background: var(--gradient-cta); color: white; }
 
-/* Task Card */
+/* ── 任务卡片（Task Card）─────────────────────────────────────────────── */
+/* 左图标 + 右信息布局，含进度条 + 难度标签（入门/中级/高级/大单/企业/专家）*/
 .task-card { display: flex; flex-direction: column; }
 .task-card-top { display: flex; gap: 16px; margin-bottom: 14px; }
 .task-card-icon {
@@ -466,7 +510,8 @@ html[data-lang="en"] .hero-title {
 .level-tag.企业 { background: var(--gradient-pink); color: white; border: 0; }
 .level-tag.专家 { background: rgba(255, 200, 80, 0.12); color: #ffc850; border: 1px solid rgba(255, 200, 80, 0.2); }
 
-/* Device Card */
+/* ── 设备卡片（Device Card）───────────────────────────────────────────── */
+/* 居中图标/图片 + 设备名 + 描述 + 功能列表 + 底栏（价格已全局隐藏）*/
 .device-card { display: flex; flex-direction: column; height: 100%; }
 .device-card-icon {
   width: 80px; height: 80px; margin: 0 auto 20px; border-radius: var(--radius);
@@ -481,7 +526,8 @@ html[data-lang="en"] .hero-title {
 }
 .device-card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* ============ 加入我们 · paxini 风极简白卡 ============ */
+/* ── 招聘卡片（Job Card）· paxini 风极简白卡 ─────────────────────────── */
+/* featured 大卡左蓝边 + regular 3列布局，≤1100px 变 2 列，≤680px 单列 */
 .job-grid { display: grid; gap: 20px; }
 .job-grid-featured { grid-template-columns: repeat(2, 1fr); }  /* 2 张大卡 */
 .job-grid-regular  { grid-template-columns: repeat(3, 1fr); }  /* 5 张普通卡 */
@@ -560,7 +606,8 @@ html[data-lang="en"] .hero-title {
   .job-card { padding: 24px 20px; }
 }
 
-/* ============ 首页 · 简化卡片样式 ============ */
+/* ── 首页简化卡片（流程卡 + 设备卡）────────────────────────────────────── */
+/* 居中排列的大按钮式卡片，用于首页"我们提供的服务"区域跳转子页面 */
 .homepage-flow-card, .homepage-device-card {
   padding: 36px 28px !important;
   text-align: center;
@@ -596,7 +643,8 @@ html[data-lang="en"] .hero-title {
   color: var(--wave-cyan);
 }
 
-/* ============ 开发者生态 · 4 步流程图 ============ */
+/* ── 开发者生态 · 4 步流程图 ────────────────────────────────────────────── */
+/* 4 步卡片 + 3 个箭头，7 列 grid 排列；≤900px 变 2 列隐藏箭头，≤520px 单列 */
 .ecosystem-flow {
   display: grid;
   grid-template-columns: 1fr 30px 1fr 30px 1fr 30px 1fr;
@@ -641,7 +689,8 @@ html[data-lang="en"] .hero-title {
   .ecosystem-flow { grid-template-columns: 1fr; }
 }
 
-/* ============ 全站隐藏价格 / 积分相关元素（产品图站不展示价格） ============ */
+/* ── 全站价格隐藏（铁律：产品站不展示任何价格 / 积分）──────────────────── */
+/* display:none 统一隐藏所有 price/reward/credits 类；新增价格元素套用这些类即可 */
 .eco-price,
 .ds-card-price,
 .device-card-price,
@@ -656,7 +705,8 @@ html[data-lang="en"] .hero-title {
 .eco-body { gap: 4px; }
 .task-card-foot { justify-content: flex-end; }
 
-/* ============ 灵汐 OS · 7 层架构图 ============ */
+/* ── 灵汐 OS · 7 层架构图 ─────────────────────────────────────────────── */
+/* 左侧 7 行 label + cells 网格，右侧 benchmark 侧栏；3 色系：绿(.g) 灰(.gr) 橙(.o) */
 .arch-wrap {
   display: grid;
   grid-template-columns: 1fr 150px;
@@ -739,7 +789,8 @@ html[data-lang="en"] .hero-title {
   .arch-bench { flex-wrap: wrap; }
 }
 
-/* ============ 灵汐工具链 · 三步走流程图 ============ */
+/* ── 灵汐工具链 · 三步走流程图 ────────────────────────────────────────── */
+/* 3 步卡片 + 2 箭头，5 列 grid；每步顶部 4px 色条（绿/蓝/橙），含统计数据行 */
 .flow-wrap {
   display: grid;
   grid-template-columns: 1fr 28px 1fr 28px 1fr;
@@ -848,7 +899,8 @@ html[data-lang="en"] .hero-title {
   .flow-step-title { font-size: 22px; }
 }
 
-/* ============ 兼容硬件生态（products.html #ecosystem） ============ */
+/* ── 兼容硬件生态（Ecosystem Card）────────────────────────────────────── */
+/* 产品页 #ecosystem 区域的设备生态卡片：封面图 + 关系标签(.g/.b/.o) + 名称 */
 .eco-card {
   padding: 0 !important;
   overflow: hidden;
@@ -893,7 +945,8 @@ html[data-lang="en"] .hero-title {
   margin-top: 2px;
 }
 
-/* ============ 设备矩阵（products.html #devices · 3 类紧凑分带） ============ */
+/* ── 设备矩阵（Device Matrix · 3 类紧凑分带）─────────────────────────── */
+/* 产品页 #devices 区域：按 A/B/C 分带展示设备列表，band-tag 标识分类 */
 .device-matrix { display: flex; flex-direction: column; gap: 36px; }
 .device-band { display: flex; flex-direction: column; gap: 18px; }
 .device-band-label {
@@ -914,7 +967,8 @@ html[data-lang="en"] .hero-title {
 .device-band-tag.b { background: var(--wave-pink); }
 .device-band-tag.c { background: var(--text-secondary); }
 
-/* ============ 开源数据集卡（带图） ============ */
+/* ── 开源数据集卡（OSS Dataset Card · 带封面图）───────────────────────── */
+/* 大封面图 + hover 缩放效果 + 渐变遮罩 + 组织/规模/描述/标签/许可证底栏 */
 .oss-ds-card { padding: 0 !important; overflow: hidden; }
 .oss-ds-image {
   width: 100%; height: 200px;
@@ -971,7 +1025,8 @@ html[data-lang="en"] .hero-title {
 .status-tag.内测 { background: rgba(236, 72, 153, 0.12); color: var(--wave-pink); }
 .status-tag.按时计费 { background: rgba(8, 145, 178, 0.12); color: var(--wave-cyan); }
 
-/* ============ Course Card ============ */
+/* ── 课程卡片（Course Card）───────────────────────────────────────────── */
+/* 左右布局：左侧 64px 图标 + 右侧标题/描述/价格（价格已全局隐藏）*/
 .course-card { display: flex; gap: 20px; align-items: flex-start; padding: 24px; }
 .course-icon {
   width: 64px; height: 64px; flex-shrink: 0; border-radius: var(--radius);
@@ -989,7 +1044,8 @@ html[data-lang="en"] .hero-title {
 .course-enrolled { font-size: 12px; color: var(--text-dim); }
 .course-enrolled span { color: #ffc850; }
 
-/* ============ Case studies ============ */
+/* ── 客户案例卡片（Case Card）─────────────────────────────────────────── */
+/* 图标 + 客户名 + 行业标签 + 故事描述 + 底栏数据规模 */
 .case-card { padding: 28px; background: var(--ocean-card); border: 1px solid var(--ocean-line); border-radius: var(--radius); transition: all 0.25s; }
 .case-card:hover { border-color: var(--ocean-line-strong); transform: translateY(-2px); }
 .case-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
@@ -1000,8 +1056,8 @@ html[data-lang="en"] .hero-title {
 .case-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--ocean-line); font-size: 12px; }
 .case-scale { color: var(--wave-cyan); font-family: var(--font-mono); }
 
-/* ============ 卡片图标在窄屏(手机)居中显示 ============ */
-/* 适用于 course-card / task-card / case-card 这种 "图标+内容" 左右布局 */
+/* ── 卡片图标在窄屏（手机）居中显示 ──────────────────────────────────── */
+/* course-card / task-card / case-card 的"图标+内容"左右布局，≤680px 变为纵向 */
 @media (max-width: 680px) {
   .course-card,
   .task-card-top,
@@ -1015,7 +1071,8 @@ html[data-lang="en"] .hero-title {
   }
 }
 
-/* ============ Partner Grid ============ */
+/* ── 合作伙伴网格（Partner Grid）──────────────────────────────────────── */
+/* 6 列小卡片，居中展示合作伙伴名称/类型/标签 */
 .partner-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
 .partner-card { background: var(--ocean-card); border: 1px solid var(--ocean-line); border-radius: var(--radius-sm); padding: 24px 12px; text-align: center; transition: all 0.2s; }
 .partner-card:hover { border-color: var(--ocean-line-strong); transform: translateY(-2px); }
@@ -1023,7 +1080,8 @@ html[data-lang="en"] .hero-title {
 .partner-type { font-size: 11px; color: var(--wave-cyan); margin-bottom: 4px; }
 .partner-tag { font-size: 11px; color: var(--text-dim); }
 
-/* ============ City Map ============ */
+/* ── 城市网格（City Map）─────────────────────────────────────────────── */
+/* 6 列 chip 式卡片，展示各城市节点 + 圆点标记 + mono 统计数据 */
 .cities {
   display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;
 }
@@ -1038,7 +1096,8 @@ html[data-lang="en"] .hero-title {
 .city-stats { display: flex; gap: 12px; font-size: 11px; font-family: var(--font-mono); color: var(--text-secondary); }
 .city-stats b { color: var(--wave-cyan); font-weight: 600; }
 
-/* ============ Filters (marketplace/tasks) ============ */
+/* ── 筛选器（Marketplace / Tasks 页顶部）────────────────────────────── */
+/* filter-bar 容器 + chip 标签组 + 搜索框，≤680px 垂直堆叠 */
 .filter-bar {
   background: var(--ocean-card); border: 1px solid var(--ocean-line);
   border-radius: var(--radius); padding: 20px 24px; margin-bottom: 32px;
@@ -1066,7 +1125,8 @@ html[data-lang="en"] .hero-title {
 .result-count { color: var(--text-dim); font-size: 13px; margin-bottom: 16px; }
 .result-count strong { color: var(--wave-cyan); }
 
-/* ============ Dashboard mock ============ */
+/* ── Dashboard 仪表盘模拟 ─────────────────────────────────────────────── */
+/* 左侧 280px sidebar + 右侧 main；含 KPI 卡、柱状图、数据表格、状态圆点 */
 .dash-grid { display: grid; grid-template-columns: 280px 1fr; gap: 24px; min-height: 600px; }
 .dash-sidebar { background: var(--ocean-card); border: 1px solid var(--ocean-line); border-radius: var(--radius); padding: 24px 0; }
 .dash-sidebar-section { padding: 0 20px 16px; margin-bottom: 16px; border-bottom: 1px solid var(--ocean-line); }
@@ -1103,7 +1163,8 @@ html[data-lang="en"] .hero-title {
 .dot.yellow { background: #ffc850; }
 .dot.red { background: var(--wave-pink); }
 
-/* ============ Modal ============ */
+/* ── Modal 弹窗 ──────────────────────────────────────────────────────── */
+/* 全屏遮罩 + 毛玻璃 + 居中白色面板，.show 控制显隐；用于数据集/任务详情 */
 .modal-mask {
   position: fixed; inset: 0; background: rgba(15, 37, 64, 0.45); backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -1130,7 +1191,8 @@ html[data-lang="en"] .hero-title {
 .modal-cell-val { font-family: var(--font-mono); color: var(--wave-cyan); font-size: 16px; font-weight: 600; }
 .modal-foot { display: flex; gap: 12px; padding-top: 24px; margin-top: 24px; border-top: 1px solid var(--ocean-line); }
 
-/* ============ Footer ============ */
+/* ── Footer 页脚 ─────────────────────────────────────────────────────── */
+/* 4 列布局（品牌 2fr + 3 个链接列），底部分隔线 + 版权 + slogan */
 .footer { background: var(--ocean-deepest); padding: 64px 32px 32px; border-top: 1px solid var(--ocean-line); }
 .footer-inner { max-width: 1400px; margin: 0 auto; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 48px; }
@@ -1143,7 +1205,8 @@ html[data-lang="en"] .hero-title {
 .footer-bot { padding-top: 24px; border-top: 1px solid var(--ocean-line); display: flex; justify-content: space-between; color: var(--text-dim); font-size: 12px; flex-wrap: wrap; gap: 12px; }
 .footer-slogan { color: var(--wave-cyan); letter-spacing: 3px; }
 
-/* ============ CTA Banner ============ */
+/* ── CTA Banner（行动号召横幅）───────────────────────────────────────── */
+/* 渐变背景圆角大卡 + 居中标题/描述/按钮组，各页面底部通用 */
 .cta-banner {
   background: linear-gradient(135deg, rgba(44, 127, 191, 0.10), rgba(8, 145, 178, 0.05));
   border: 1px solid var(--ocean-line-strong); border-radius: var(--radius-lg);
@@ -1154,7 +1217,8 @@ html[data-lang="en"] .hero-title {
 .cta-banner p { color: var(--text-secondary); margin-bottom: 32px; font-size: 16px; }
 .cta-banner-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-/* ============ Page header (subpages) ============ */
+/* ── 子页面头部（Page Header）─────────────────────────────────────────── */
+/* 渐变背景 + 居中标题（渐变文字）+ 副标题，用于 products/dev/about 等子页面 */
 .page-head {
   background: var(--gradient-hero); padding: 140px 32px 80px; text-align: center;
 }
@@ -1164,10 +1228,12 @@ html[data-lang="en"] .hero-title {
 }
 .page-head p { color: var(--text-secondary); font-size: 17px; max-width: 720px; margin: 0 auto; }
 
-/* ============ Wave divider ============ */
+/* ── 波浪分隔线 ──────────────────────────────────────────────────────── */
+/* 80px 高渐变过渡带，衔接子页面头部和正文区域 */
 .wave-divider { height: 80px; background: linear-gradient(180deg, transparent 0%, var(--ocean-deepest) 100%); }
 
-/* ============ TOC (侧边章节导航) ============ */
+/* ── TOC 侧边章节导航 ─────────────────────────────────────────────────── */
+/* 固定右侧悬浮面板，毛玻璃背景，.active 高亮当前章节；≤1100px 隐藏 */
 .toc {
   position: fixed; right: 24px; top: 50%;
   transform: translateY(-50%);
@@ -1206,7 +1272,8 @@ html[data-lang="en"] .hero-title {
   background: linear-gradient(90deg, rgba(8, 145, 178, 0.10), transparent);
 }
 
-/* ============ Back-to-Top ============ */
+/* ── 回到顶部按钮（Back-to-Top）──────────────────────────────────────── */
+/* 右下角固定圆形按钮，渐变蓝背景；.visible 控制淡入显示 */
 .back-to-top {
   position: fixed; bottom: 24px; right: 24px;
   width: 48px; height: 48px;
@@ -1224,7 +1291,8 @@ html[data-lang="en"] .hero-title {
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(44, 127, 191, 0.5); }
 
-/* ============ Hamburger + Mobile Drawer ============ */
+/* ── Hamburger 按钮 + 移动端抽屉菜单 ──────────────────────────────────── */
+/* ≤1100px 显示三道杠按钮，点击展开全屏抽屉；3 条 span 做动画变 × 号 */
 .hamburger-btn {
   display: none;
   width: 40px; height: 40px;
@@ -1291,7 +1359,10 @@ body.drawer-open { overflow: hidden; }
 }
 .mobile-drawer-cta .btn { width: 100%; justify-content: center; }
 
-/* ============ Responsive ============ */
+/* ── 响应式断点 ──────────────────────────────────────────────────────── */
+/* @1100px: 笔记本（grid 缩列 + Nav 变 hamburger + dashboard 单列）
+ * @680px:  手机（全单列 + padding 收敛 + 字体缩小 + CTA 按钮全宽）
+ * @420px:  小手机（footer 单列 + 抽屉 CTA 单列）*/
 @media (max-width: 1100px) {
   .toc { display: none !important; }
 }
@@ -1373,6 +1444,7 @@ body.drawer-open { overflow: hidden; }
   .dash-kpi-card { padding: 14px; }
   .dash-kpi-num { font-size: 22px; }
   .dash-table th, .dash-table td { font-size: 12px; }
+  .dash-two-col { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 420px) {
@@ -1380,7 +1452,10 @@ body.drawer-open { overflow: hidden; }
   .mobile-drawer-cta { grid-template-columns: 1fr; }
 }
 
-/* ============ 手机适配补丁 · 兜底内联 grid / padding 错行 ============ */
+/* ── 手机适配补丁 · 兜底内联 grid / padding 覆盖 ─────────────────────── */
+/* HTML 内有 style="display:grid;grid-template-columns:..." 的内联样式时，
+ * 用 [style*="..."] 属性选择器 + !important 在窄屏强制覆盖为单列/两列。
+ * 参见 CLAUDE.md "行内 grid 兜底" 说明。*/
 @media (max-width: 900px) {
   /* developer.html: 5-col step pipeline (3 cards + 2 arrows) → vertical */
   div[style*="repeat(5, 1fr) 0fr"] {
@@ -1397,6 +1472,8 @@ body.drawer-open { overflow: hidden; }
     gap: 20px !important;
   }
   /* dashboard.html: 2 tables side-by-side → stack */
+  .dash-two-col,
+  div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 16px"],
   div[style*="grid-template-columns:1fr 1fr"][style*="gap:16px"] {
     grid-template-columns: 1fr !important;
   }
@@ -1448,9 +1525,59 @@ body.drawer-open { overflow: hidden; }
   div[style*="font-size:24px"][style*="letter-spacing:2px"] {
     font-size: 20px !important;
   }
-  /* dashboard.html: 让 dash-section 允许横向滚动；表格设 min-width 避免列挤死 */
-  .dash-section { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .dash-table { min-width: 460px; }
+  /* dashboard.html: iPhone 小屏紧凑化，避免表格挤压错位 */
+  .dash-section { overflow-x: hidden; }
+  .dash-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .dash-table th,
+  .dash-table td {
+    padding: 10px 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .dash-table .mono { font-size: 11px; }
+  .dash-prog { width: 56px !important; }
+
+  /* 设备表：小屏隐藏“位置”列 */
+  .dash-table-dev th:nth-child(2),
+  .dash-table-dev td:nth-child(2) {
+    display: none;
+  }
+
+  /* 任务表：保留预算列，压缩状态列宽度 */
+  .dash-table-task th:nth-child(1),
+  .dash-table-task td:nth-child(1) {
+    width: 80px;
+    max-width: 80px;
+  }
+  .dash-table-task th:nth-child(3),
+  .dash-table-task td:nth-child(3) {
+    width: 50px;
+    max-width: 64px;
+  }
+  .dash-table-task th:nth-child(4),
+  .dash-table-task td:nth-child(4) {
+    width: 50px;
+    max-width: 56px;
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .dash-table-task td:nth-child(4) .dot {
+    margin-right: 3px;
+  }
+
+  /* 订单表：小屏隐藏“描述/时间”列 */
+  .dash-table-order th:nth-child(3),
+  .dash-table-order td:nth-child(3),
+  .dash-table-order th:nth-child(5),
+  .dash-table-order td:nth-child(5) {
+    display: none;
+  }
   /* developer.html: 数据集统计大数字 36px 在 390px 太挤 */
   div[style*="repeat(4,1fr)"] div[style*="font-size:36px"] {
     font-size: 28px !important;

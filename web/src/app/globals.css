@@ -1,6 +1,22 @@
+/**
+ * @file 全局 CSS 入口（globals.css）
+ *
+ * 职责：
+ *   1. 导入 legacy.css —— 承载从旧版静态站点迁移过来的全部样式
+ *      （包含 CSS 变量、组件样式、响应式断点、价格隐藏规则等）
+ *   2. 隐藏 Next.js 开发环境的调试覆盖层（Dev Overlay Badge / DevTools 按钮）
+ *
+ * 注意：
+ *   - 本项目不使用 Tailwind CSS，虽然文件名含 globals.css 但无 @tailwind 指令
+ *   - 所有业务样式均集中在 legacy.css 中维护，此文件保持精简
+ *   - 如需新增全局样式，优先添加到 legacy.css 而非此文件
+ */
 @import "./legacy.css";
 
-/* Hide Next.js dev overlay badge/devtools indicator and issue toast in development UI. */
+/* ── 隐藏 Next.js 开发环境 UI 组件 ─────────────────────────────
+   开发模式下 Next.js 会注入调试按钮和错误提示覆盖层，
+   这些元素会干扰 UI 截图和视觉调试，因此统一隐藏。
+   生产环境构建后这些元素本就不存在，此规则不产生副作用。 */
 [data-next-badge-root],
 [data-next-badge],
 [data-next-mark],

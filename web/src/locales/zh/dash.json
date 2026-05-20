@@ -1,0 +1,23 @@
+{
+  "head": { "h1": "数据管理平台", "desc": "设备监控 / 任务编排 / 质检 / 算力 / 财务一站式" },
+  "demo": { "label": "演示预览 · 仅 UI 模拟：", "note": "下方数据均为示意，完整版本即将上线。" },
+  "side": { "ops": "运营", "dev": "设备", "model": "模型", "acct": "账户" },
+  "menu": {
+    "cockpit": "📊 数据驾驶舱", "mydata": "📂 我的数据集", "task": "📥 采集任务", "qa": "✅ 质检流水线",
+    "cap": "🦾 采集设备", "cam": "📸 摄像头节点", "gpu": "☁️ GPU 算力", "train": "🧠 训练任务",
+    "repo": "🚀 模型仓库", "deploy": "📡 推理部署", "wallet": "💎 我的资源", "bill": "📑 财务账单", "team": "⚙️ 团队设置"
+  },
+  "greet": "您好，某 EMS 客户 · 今日数据概览",
+  "kpi": {
+    "frames": "今日采集帧数", "devices": "在线采集设备", "qa": "质检合格率", "credits": "本月处理帧数",
+    "vsYesterday": "vs 昨日", "newOnline": "台新上线", "vsLastMonth": "vs 上月"
+  },
+  "chart": { "title": "📈 近 14 天采集帧数趋势", "unit": "单位：万帧 · 实时" },
+  "dev": {
+    "title": "🦾 在线采集设备 TOP 10", "viewAll": "查看全部 →",
+    "col": { "id": "设备 ID", "loc": "位置", "frames": "今日帧数", "status": "状态" }
+  },
+  "task": { "title": "📥 进行中采集任务", "new": "+ 新建任务", "col": { "task": "任务", "prog": "进度", "bud": "预算", "status": "状态" } },
+  "ord": { "title": "📑 近期订单 / 财务流水", "export": "导出账单 →", "col": { "id": "订单 ID", "type": "类型", "desc": "描述", "amt": "金额", "time": "时间", "status": "状态" } },
+  "status": { "capturing": "采集中", "slow": "低速", "offline": "离线", "ok": "正常", "warn": "告警", "paid": "已付款", "pending": "处理中" }
+}

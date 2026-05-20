@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "eyebrow": "Embodied-AI data-asset operator",
+    "title": "Data flows like tide, intelligence emerges",
+    "sub": "Scaling embodied AI in the era of Scaling Law — with industrial-grade datasets, toolchain, and developer ecosystem.",
+    "cta1": "Explore products →",
+    "cta2": "Join developer ecosystem"
+  },
+  "ds": {
+    "s1": { "label": "📦 Logistics" },
+    "s2": { "label": "🏭 Industrial" },
+    "s3": { "label": "🏠 Home service" },
+    "s4": { "label": "🏥 Medical" },
+    "status": { "coming": "Coming soon" }
+  },
+  "svc": {
+    "eyebrow": "① SERVICES",
+    "title": "Our Services",
+    "desc": "From datasets · toolchain · all-in-one platform to developer ecosystem — one operator for embodied-AI industrial infrastructure.",
+    "more": "Learn more →",
+    "s1": { "eyebrow": "SERVICE 01", "label": "Large-scale datasets", "desc": "Logistics · industrial · home · medical — four core verticals with continuous releases.", "tag": "Datasets" },
+    "s2": { "eyebrow": "SERVICE 02", "label": "Embodied-AI data toolchain", "desc": "Three-step pipeline from capture to deliverable model · appliance delivery · LeRobot-native.", "tag": "Toolchain" },
+    "s3": { "eyebrow": "SERVICE 03", "label": "One-click capture & pre-training", "desc": "Capture device + elastic compute + model pre-training end-to-end — plug-and-play.", "tag": "Platform" },
+    "s4": { "eyebrow": "SERVICE 04", "label": "Developer Center", "desc": "API docs · skill store · entry-level arms · open-source datasets · academy — one entry.", "tag": "Developers" }
+  },
+  "why": {
+    "eyebrow": "② WHY US",
+    "title": "Why choose us",
+    "desc": "Three moats: quality, scale, endorsement.",
+    "c1": { "title": "Frame-level QA · Industrial-grade Standards", "desc": "Three-stage QA — auto alignment + vision anomaly screening + certified review. Ships aligned to LeRobot v3 / RLDS." },
+    "c2": { "title": "Multi-city Capture Network", "desc": "City-level sites with pro operators, industrial-grade delivery. Single/dual-arm, multi-view, force & tactile." },
+    "c3": { "title": "Ecosystem Co-built · Mainstream Standards", "desc": "Joint capture with 3C / EMS, medical, retail, logistics leaders. LeRobot v3 / RLDS & VLA-ready." }
+  },
+  "cta": {
+    "title": "Data flows like tide, intelligence emerges",
+    "desc": "Data flows in, intelligence emerges.",
+    "b1": "View full product lineup",
+    "b2": "Join developer ecosystem",
+    "b3": "Contact us"
+  }
+}

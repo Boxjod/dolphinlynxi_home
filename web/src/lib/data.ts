@@ -1,5 +1,21 @@
-// ── Dolphin Lynxi · TypeScript data ─────────────────────────────────────────
+/**
+ * 静态数据定义
+ *
+ * 本文件是全站的"数据中台"，包含所有展示用的结构化数据：
+ *   - datasets:    数据集市场的 24 个商品卡片
+ *   - tasks:       任务大厅的 12 个任务卡片
+ *   - devices:     采集设备的 4 个硬件卡片
+ *   - courses:     海豚学院的 5 门课程
+ *   - skills:      技能商店的 8 个技能包
+ *   - ossDatasets:  开发者页的 12 个开源数据集
+ *
+ * 数据全部为中文（主语言），英文版本在各页面通过 i18n 翻译层处理。
+ * 未来对接真实后端 API 后，这些类型定义（interface）仍可复用。
+ */
 
+// ── 类型定义 ─────────────────────────────────────────────────────────────────
+
+/** 数据集商品 — 用于数据集市场 (/marketplace) */
 export interface Dataset {
   id: string; name: string; icon: string; image: string;
   scene: string; arm: 'single' | 'dual'; modality: string[];
@@ -9,6 +25,7 @@ export interface Dataset {
   tags: string[]; hot?: boolean; new?: boolean; description: string;
 }
 
+/** 采集任务 — 用于任务大厅 (/tasks) */
 export interface Task {
   id: string; title: string; icon: string;
   type: 'collect' | 'verify' | 'label' | 'custom';
@@ -18,12 +35,14 @@ export interface Task {
   requirements: string[]; description: string;
 }
 
+/** 采集设备 — 用于产品页设备矩阵 (/products#devices) */
 export interface Device {
   id: string; name: string; icon: string; image: string; group: string;
   category: string; price: number; priceSuffix?: string; status: string;
   hot?: boolean; new?: boolean; features: string[]; desc: string;
 }
 
+/** 培训课程 — 用于开发者页海豚学院 (/developer#academy) */
 export interface Course {
   id: string; title: string; icon: string;
   level: string; format: string; duration: string;
@@ -31,6 +50,7 @@ export interface Course {
   enrolled: number; rating: number; includes: string[]; desc: string;
 }
 
+/** 技能包 — 用于开发者页技能商店 (/developer#skills) */
 export interface Skill {
   id: string; name: string; icon: string; image: string; scene: string;
   model: string; basedOn: string; successRate: number; latency: number;
@@ -38,13 +58,15 @@ export interface Skill {
   requires: string; desc: string;
 }
 
+/** 开源数据集 — 用于开发者页精选开源 (/developer#oss) */
 export interface OssDataset {
   id: string; name: string; org: string; type: string; image: string;
   license: string; scale: string; metric: string; tags: string[];
   desc: string; href: string;
 }
 
-// ── Datasets ──────────────────────────────────────────────────────────────────
+// ── 数据集商品列表（24 个） ──────────────────────────────────────────────────
+// 覆盖 4 大核心场景：餐饮、家庭服务、工业制造、物流仓储，以及医疗、零售等扩展场景
 export const datasets: Dataset[] = [
   { id:'DLX-DS-1001', name:'拿铁拉花·意式咖啡机制作', icon:'☕', image:'assets/datasets-feat/coffee-latte-art.jpg',
     scene:'餐饮', arm:'single', modality:['RGB-D','ARM-Joint','Force'],
@@ -192,7 +214,8 @@ export const datasets: Dataset[] = [
     description:'4 种尺寸纸箱折叠/封装全流程，含胶带粘贴控制力，单集 70-80s。' },
 ];
 
-// ── Tasks ─────────────────────────────────────────────────────────────────────
+// ── 采集任务列表（12 个） ────────────────────────────────────────────────────
+// 任务类型：collect（征集）、verify（校验）、label（标注）、custom（定制大单）
 export const tasks: Task[] = [
   { id:'TASK-2001', title:'中式面点·甩面动作专项采集', icon:'🍜',
     type:'collect', client:'某连锁餐饮龙头', scene:'餐饮',
@@ -268,10 +291,11 @@ export const tasks: Task[] = [
     description:'为提升 VLA 鲁棒性，专项采集极端工况（包裹破损/标签污损/挤压形变）。' },
 ];
 
-// ── Devices ───────────────────────────────────────────────────────────────────
+// ── 采集设备列表（4 个） ────────────────────────────────────────────────────
+// 设备类型：入门级桌面臂、EXO 外骨骼、VR 手柄套件、XR 沉浸遥操
 export const devices: Device[] = [
   { id:'DEV-3015', name:'灵汐·轻量级机械臂', icon:'🦾',
-    image:'assets/joycon.png', group:'teleop',
+    image:'assets/joy-arm.jpg', group:'teleop',
     category:'入门级桌面臂', price:1299, status:'现货', hot:true,
     features:['🦾 6 DOF 桌面臂 · 仅 0.8 kg','🕹️ Joy-Con 风格手柄遥操','✅ 已售 1000+ 套'],
     desc:'学生 / 创客入门首选，30 分钟上手开始数采。' },
@@ -292,7 +316,8 @@ export const devices: Device[] = [
     desc:'Vision Pro 眼动 + 手势遥操，精度比传统手柄高 3 倍。' },
 ];
 
-// ── Courses ───────────────────────────────────────────────────────────────────
+// ── 培训课程列表（5 门） ────────────────────────────────────────────────────
+// 从零基础入门到企业级陪跑，覆盖不同层级
 export const courses: Course[] = [
   { id:'EDU-4001', title:'零基础 3 天上手机械臂数采', icon:'🚀',
     level:'入门', format:'线下 · 上海', duration:'3 天 / 24h', price:999,
@@ -316,7 +341,8 @@ export const courses: Course[] = [
     desc:'面向有 LeRobot 经验的工程师。结业可独立完成 VLA 模型行业微调。' },
 ];
 
-// ── Skills ────────────────────────────────────────────────────────────────────
+// ── 技能包列表（8 个） ──────────────────────────────────────────────────────
+// 预训练模型技能包，基于 ACT / π0 / GR00T 等算法，支持即开即用
 export const skills: Skill[] = [
   { id:'SKILL-5001', name:'叠衣服技能包 v2.1', icon:'👕', image:'assets/datasets-feat/fold-tshirt.jpg', scene:'家庭服务',
     model:'π0', basedOn:'DLX-DS-1002', successRate:89.2, latency:12,
@@ -352,7 +378,8 @@ export const skills: Skill[] = [
     desc:'入门款东方禅意三才插花，含天/地/人三主枝生成式策略。' },
 ];
 
-// ── Open-source Datasets ──────────────────────────────────────────────────────
+// ── 全球开源数据集精选（12 个） ──────────────────────────────────────────────
+// 包括 OXE、DROID、LeRobot Hub、ALOHA 等业界标杆，镜像加速 + 一键拉取
 export const ossDatasets: OssDataset[] = [
   { id:'OXE', name:'Open X-Embodiment', org:'Google DeepMind + 22 实验室',
     type:'学术聚合', image:'assets/datasets/oxe.png',

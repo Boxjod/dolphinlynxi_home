@@ -9,13 +9,13 @@
 
 ## 当前阶段
 
-仓库现在进入第一阶段重构：
+仓库当前状态：
 
-- 根目录仍保留现有静态品牌站页面
-- `web/` 用作 React + TypeScript + Next.js 平台壳
-- `services/api/` 新增 Python + FastAPI 后端骨架
+- 前端已统一迁移到 `web/`（React + TypeScript + Next.js）
+- 根目录旧静态 HTML 页面已移除
+- `services/api/` 为 Python + FastAPI 后端骨架
 
-目标不是一次性把所有业务都拆成微前端，而是先建立一个可扩展的 monorepo 基础，再逐步接入订单、用户、渠道等业务域。
+当前目标是基于 monorepo 持续迭代 `web/` 与 `services/api/`，逐步接入订单、用户、渠道等业务域。
 
 ---
 
@@ -23,16 +23,6 @@
 
 ```
 dolphinlynxi_home/
-├── about.html
-├── dashboard.html
-├── developer.html
-├── index.html
-├── marketplace.html
-├── products.html
-├── tasks.html
-├── css/
-├── js/
-├── assets/
 ├── web/                     # Next.js 平台壳
 │   ├── package.json
 │   ├── next.config.ts
@@ -72,12 +62,6 @@ dolphinlynxi_home/
 ---
 
 ## 本地开发
-
-### 静态站
-
-```bash
-python -m http.server 5500
-```
 
 ### Next.js 平台壳
 

@@ -1,0 +1,44 @@
+{
+  "head": { "h1": "Developer ecosystem", "desc": "Embodied-AI development, as easy as building an app.", "b1": "Platform", "b2": "Skill store", "b3": "Entry arm", "b4": "Open datasets", "b5": "Academy" },
+  "s1": {
+    "eyebrow": "SECTION 01", "title": "All-in-one Embodied-AI Platform", "desc": "Data → Compute → Model → Deploy. One account.",
+    "login": "🚀 All-in-one developer platform", "loginHint": "Join early access · free trial coming soon",
+    "step1": { "eyebrow": "STEP 1", "label": "Download dataset", "desc": "In-house / open-source / purchased" },
+    "step2": { "eyebrow": "STEP 2", "label": "Elastic GPU training", "desc": "On-demand · pricing TBD" },
+    "step3": { "eyebrow": "STEP 3", "label": "One-click deploy", "desc": "→ your robot arm" },
+    "models": "Supported models:",
+    "c1": { "title": "Free trial · Coming soon", "desc": "Early-access users get a free GPU trial — enough for one ACT train + inference cycle." },
+    "c2": { "title": "Full API documentation", "desc": "RESTful API + Python SDK — 5 lines of code to run inference." },
+    "c3": { "title": "Developer community", "desc": "GitHub / Discord / WeChat Q&A." }
+  },
+  "s2": {
+    "eyebrow": "SECTION 02", "title": "Skill store", "desc": "Pre-trained ACT / π0 / GR00T skill packs, plug-and-play.",
+    "upload": "List your skill, share revenue →",
+    "banner": { "title": "🎯 Skill developer revenue program · Coming soon", "desc": "List a skill and share revenue — platform handles compute, marketing, support." }
+  },
+  "s3": {
+    "eyebrow": "SECTION 03", "title": "Entry-level robot arms", "desc": "Dolphin-Mini 6-DOF desktop arm, launching soon.",
+    "mini": {
+      "cat": "ENTRY · TOC", "priceLabel": "Stay tuned · Reserve now",
+      "f1": "6-DOF · desktop · 1.2 kg", "f2": "USB-C power · plug & play",
+      "f3": "Foldable · A4-size storage", "f4": "30-min onboarding · Academy-student discount on release",
+      "f5": "Open-source firmware · LeRobot-format compatible", "b1": "Reserve now", "b2": "View details"
+    },
+    "arm": {
+      "cat": "STANDARD", "name": "Dolphin-Arm Standard",
+      "f1": "6-DOF Feetech servos · industrial consistency", "f2": "RGB-D camera · visual-grasp kit included",
+      "f3": "Leader-follower teleop < 3 ms · ESP-NOW direct", "f4": "Dual-arm upgrade-ready · become Dolphin-Dual",
+      "f5": "Developer data-platform account · early-access coming soon", "b2": "Compare models"
+    }
+  },
+  "s4": {
+    "eyebrow": "SECTION 04 · OPEN-SOURCE DATASETS", "title": "Curated global open-source datasets",
+    "desc": "12 representative open datasets, mirrored & one-click pullable.",
+    "k1": { "label": "Curated datasets" }, "k2": { "label": "Total frame scale" }, "k3": { "label": "Robot embodiments" }, "k4": { "label": "Open-source licenses" },
+    "note": "💡 <strong style=\"color:var(--wave-cyan);\">SO-101 + 50 episodes + 1 hour training</strong> — arm learns a new skill."
+  },
+  "s5": {
+    "eyebrow": "SECTION 05", "title": "Dolphin Academy · Training & Certification", "desc": "Beginner to enterprise enablement, curriculum growing.",
+    "cta": { "title": "Become a Dolphin Certified Developer", "desc": "Certified developers can list skills, take platform jobs, get traffic boost — launching soon.", "b1": "See certification", "b2": "Browse task hall" }
+  }
+}

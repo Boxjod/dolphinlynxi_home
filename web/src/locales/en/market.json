@@ -1,0 +1,4 @@
+{
+  "head": { "h1": "Dataset market", "desc": "Human-captured · frame-aligned · ready for LeRobot / π0 / GR00T" },
+  "filter": { "scene": "Scene", "arm": "Arm", "vendor": "Vendor", "search": "🔍 Search by name, ID, description..." }
+}
