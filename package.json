@@ -1,0 +1,13 @@
+{
+  "name": "dolphinlynxi-home",
+  "private": true,
+  "workspaces": [
+    "web"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace web",
+    "build:web": "npm run build --workspace web",
+    "lint:web": "npm run lint --workspace web",
+    "dev:api": "python -m uvicorn app.main:app --reload --app-dir services/api"
+  }
+}

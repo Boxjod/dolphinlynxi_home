@@ -21,7 +21,12 @@ node_modules/
 dist/
 build/
 .cache/
+.next/
+.turbo/
 out/
+
+# Next.js 自动生成的类型文件（dev/build 切换会自动改，不需要追踪）
+web/next-env.d.ts=
 
 # 日志
 *.log
@@ -31,6 +36,13 @@ logs/
 .env
 .env.local
 .env.*.local
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
 
 # Claude 工作目录
 .claude/

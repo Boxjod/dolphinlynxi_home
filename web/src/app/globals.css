@@ -1,0 +1,12 @@
+@import "./legacy.css";
+
+/* Hide Next.js dev overlay badge/devtools indicator and issue toast in development UI. */
+[data-next-badge-root],
+[data-next-badge],
+[data-next-mark],
+[data-nextjs-dev-tools-button],
+#next-logo,
+#nextjs-dev-tools-menu,
+nextjs-portal {
+	display: none !important;
+}
